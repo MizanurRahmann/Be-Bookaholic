@@ -1,0 +1,49 @@
+/* ======= BANNNER PART ======== */
+.banner{
+    height: 46vh;
+    margin-left: 70px;
+    margin-right: 70px;
+    background-color: #3366FF0F;
+    border-radius: 10px;
+    overflow: visible;
+    display: flex;
+    justify-content: space-between;
+  }
+  .banner__text{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner__heading{
+    padding: 30px;
+    text-align: right;
+    background: url('../images/bannerImage/text-image.jpg') no-repeat center center / cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .banner__heading h1{ font-size: 25px; line-height: 25px; }
+  .banner__heading h1 span{ font-weight: 800; font-size: 66px; letter-spacing: 2px;}
+  .banner__heading h2{
+    margin-left: 60px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    position: relative;
+  }
+  .banner__heading h2:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    height: 2px;
+    width: 200px;
+    background-color: var(--blue);
+  }
+  .banner__image{ position: relative; width: 40%; }
+  .banner__image img{
+    height: 55vh;
+    position: absolute;
+    transform: rotateY(180deg);
+    top: -10vh;
+    right: -10px;
+  }

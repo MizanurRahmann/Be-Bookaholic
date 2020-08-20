@@ -22,3 +22,5 @@ body {
   background-color: var(--grey-light);
   font-family: 'Oswald', sans-serif;
 }
+
+main{ margin-top: 135px; }
