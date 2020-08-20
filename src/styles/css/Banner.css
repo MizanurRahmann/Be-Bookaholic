@@ -47,3 +47,15 @@
     top: -10vh;
     right: -10px;
   }
+
+@media (max-width: 768px){
+    main{ margin-top: 90px; }
+    .banner{ height: 20vh; margin-left: 20px; margin-right: 20px; } 
+    .banner__heading{padding: 15px;}
+    .banner__text{ width: 70%;}
+    .banner__image img{ height: 20vh; top: -4vh;}
+    .banner__heading h1{ font-size: 12px; line-height: 25px; }
+    .banner__heading h1 span{ font-weight: 600; font-size: 20px; }
+    .banner__heading h2{ font-size: 16px; margin-right: 10px;}
+    .banner__heading h2:after{ right: 68px; height: 2px; width: 25px; } 
+}  
