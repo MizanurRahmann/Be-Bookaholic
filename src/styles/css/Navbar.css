@@ -63,12 +63,13 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
   transform: translate(-50%, -50%); 
 }
 .logo div{
-  height: 22px;
-  width: 22px;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
   background-color: var(--blue);
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: bold;
   position: absolute;
   top: 50%;
   left: 60%;
