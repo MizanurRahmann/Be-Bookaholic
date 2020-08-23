@@ -55,22 +55,11 @@ function BookList() {
                 </div>
                 <Slider {...settings} className="book__carousel">
                     {
-                        classicBook.map(cb => ( <Book id={cb.id} name={cb.name} price={cb.price}/> ))
+                        classicBook.map(cb => ( <Book key={cb.id} id={cb.id} name={cb.name} price={cb.price}/> ))
                     }
                 </Slider>
             </div>
-            <div className="book__list">
-                <div className="book__category">Fiction</div>
-                <div className="book__category__heading">
-                    <h1>Fiction</h1>
-                    <p>view all</p>
-                </div>
-                <Slider {...settings} className="book__carousel">
-                    { 
-                        fictionBook.map(fb => ( <Book id={fb.id} name={fb.name} price={fb.price}/> )) 
-                    }
-                </Slider>
-            </div>
+
             <div className="book__list">
                 <div className="book__category">Nonfiction</div>
                 <div className="book__category__heading">
@@ -79,7 +68,20 @@ function BookList() {
                 </div>
                 <Slider {...settings} className="book__carousel">
                     {
-                         nonFictionBook.map(nfb => ( <Book id={nfb.id} name={nfb.name} price={nfb.price}/> )) 
+                         nonFictionBook.map(nfb => ( <Book key={nfb.id} id={nfb.id} name={nfb.name} price={nfb.price}/> )) 
+                    }
+                </Slider>
+            </div>
+
+            <div className="book__list">
+                <div className="book__category">Fiction</div>
+                <div className="book__category__heading">
+                    <h1>Fiction</h1>
+                    <p>view all</p>
+                </div>
+                <Slider {...settings} className="book__carousel">
+                    { 
+                        fictionBook.map(fb => ( <Book key={fb.id} id={fb.id} name={fb.name} price={fb.price}/> )) 
                     }
                 </Slider>
             </div>
@@ -92,10 +94,11 @@ function BookList() {
                 </div>
                 <Slider {...settings} className="book__carousel">
                     {
-                         islamikBook.map(ib => ( <Book id={ib.id} name={ib.name} price={ib.price}/> )) 
+                         islamikBook.map(ib => ( <Book key={ib.id} id={ib.id} name={ib.name} price={ib.price}/> )) 
                     }
                 </Slider>
             </div>
+
         </div>
     )
 }

@@ -49,11 +49,10 @@ a.card__info{text-decoration: none; color: #000; position: relative;}
 }
 a.card__info:hover > .card__image{ opacity: 0.5;}
 a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
-.card__option a:hover{background: var(--orange); color: #fff;}
+.card__option div:hover{background: var(--orange); color: #fff;}
 
-.card__option a{ 
+.card__option div{ 
   color: #000;
-  text-decoration: none;
   height: 50px;
   width: 50px;
   padding: 5px; 

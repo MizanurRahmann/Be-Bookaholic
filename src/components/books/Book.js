@@ -15,9 +15,9 @@ function Book({id, name, price}) {
                     <img src={imageUrl} alt={name} height="100%"/>
                 </div>
                 <div className="card__option">
-                    <Link to='/' className="one"><i class="fas fa-cart-arrow-down"></i></Link>
-                    <Link to='/' className="two"><i class="fas fa-book-open"></i></Link>
-                    <Link to='/' className="three"><i class="far fa-heart"></i></Link>
+                    <div className="one"><i className="fas fa-cart-arrow-down"></i></div>
+                    <div className="two"><i className="fas fa-book-open"></i></div>
+                    <div className="three"><i className="far fa-heart"></i></div>
                 </div>
                 <div className="card__detail">
                     <h2 className="book__price">৳ {price}</h2>
