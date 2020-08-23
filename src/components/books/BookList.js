@@ -9,36 +9,44 @@ function BookList() {
     const [ classicBook, setClassicBook ] = useState([]);
     const [ fictionBook, setFictionBook ] = useState([]);
     const [ nonFictionBook, setNonFictionBook ] = useState([]);
+    const [islamikBook, setIslamikBook] = useState([]);
 
 
     useEffect(() => {
         const BooksTable = db.collection('Books');
-        //Find Classic books
+        //Get Classic books
         BooksTable.where('categories', 'array-contains', 'Classic')
             .get().then(querySnapshot => {
                 let classic = [];
                 querySnapshot.forEach(doc => { classic.push({id:doc.id, ...doc.data()}); });
                 setClassicBook(classic);
             })
-        //Find Fiction books
+        //Get Fiction books
         BooksTable.where('categories', 'array-contains', 'Fiction')
             .get().then(querySnapshot => {
                 let fiction = [];
                 querySnapshot.forEach(doc => { fiction.push({id:doc.id, ...doc.data()}); });
                 setFictionBook(fiction);
             })
-        //Find Non fiction book
+        //Get Non fiction books
         BooksTable.where('categories', 'array-contains', 'Nonfiction')
             .get().then(querySnapshot => {
                 let nonfiction = []
                 querySnapshot.forEach(doc => { nonfiction.push({id:doc.id, ...doc.data()}); });
                 setNonFictionBook(nonfiction);
             })
+        //Get Non islamik books
+        BooksTable.where('categories', 'array-contains', 'Islamik')
+            .get().then(querySnapshot => {
+                let islamik = []
+                querySnapshot.forEach(doc => { islamik.push({id:doc.id, ...doc.data()}); });
+                setIslamikBook(islamik);
+            })
     }, [])
 
 
     return (
-        <div>
+        <div style={{width: "100%"}}>
             <div className="book__list">
                 <div className="book__category">Classic</div>
                 <div className="book__category__heading">
@@ -72,6 +80,19 @@ function BookList() {
                 <Slider {...settings} className="book__carousel">
                     {
                          nonFictionBook.map(nfb => ( <Book id={nfb.id} name={nfb.name} price={nfb.price}/> )) 
+                    }
+                </Slider>
+            </div>
+            
+            <div className="book__list">
+                <div className="book__category">Islamik</div>
+                <div className="book__category__heading">
+                    <h1>Islamik</h1>
+                    <p>view all</p>
+                </div>
+                <Slider {...settings} className="book__carousel">
+                    {
+                         islamikBook.map(ib => ( <Book id={ib.id} name={ib.name} price={ib.price}/> )) 
                     }
                 </Slider>
             </div>
