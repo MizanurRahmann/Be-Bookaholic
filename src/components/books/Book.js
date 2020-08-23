@@ -1,0 +1,31 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Book({id, name, price}) {
+    
+    // const addToCart = () => {
+    //     //added to cart
+    // }
+
+    const imageUrl = `https://firebasestorage.googleapis.com/v0/b/br-bookaholic.appspot.com/o/BookImages%2F${id}.jpg?alt=media&token=6316abd8-eee5-4e16-a446-9c9ad9a2316d`;
+    return (
+        <div to="/details" className="card">
+            <Link to='/' className="card__info">
+                <div className="card__image">
+                    <img src={imageUrl} alt={name} height="100%"/>
+                </div>
+                <div className="card__option">
+                    <Link to='/' className="one"><i class="fas fa-cart-arrow-down"></i></Link>
+                    <Link to='/' className="two"><i class="fas fa-book-open"></i></Link>
+                    <Link to='/' className="three"><i class="far fa-heart"></i></Link>
+                </div>
+                <div className="card__detail">
+                    <h2 className="book__price">৳ {price}</h2>
+                    <h3 className="book__title">{name}</h3>
+                </div>
+            </Link>
+        </div>
+    )
+}
+
+export default Book

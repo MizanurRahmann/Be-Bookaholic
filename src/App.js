@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Login from './components/auth/Login';
 import Checkout from './components/checkout/Checkout';
 import Banner from './components/banner/Banner';
+import BookList from './components/books/BookList';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/'>
             <main>
               <Banner />
+              <BookList />
             </main>
           </Route>
       </Router>

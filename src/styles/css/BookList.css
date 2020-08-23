@@ -1,0 +1,87 @@
+/* ======= CAROUSEL PART ======== */
+.book__list{ padding: 70px; position: relative; }
+.book__category{
+  font-size: 200px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: rgba(0, 0, 0, 0.03);
+  height: 80%;
+  width: 50%;
+  position: absolute;
+  top: -50px;
+  left: 50px;
+  margin-left: 50px;
+  z-index: -1;
+}
+.book__category__heading h1{ position: relative; font-size: 40px;}
+.book__category__heading{
+  margin-bottom: 20px;
+  display: flex; justify-content: space-between;  align-items: flex-end; 
+}
+
+.slick-arrow{width: 40px; height: 40px; border-radius: 50%; }
+.slick-arrow,
+.slick-arrow:hover, 
+.slick-arrow:active,
+.slick-arrow:visited,
+.slick-arrow:link{
+  background: var(--blue-dark) !important;
+}
+.slick-arrow.slick-prev{margin-left: 20px !important;}
+.slick-arrow.slick-next{margin-right: 20px !important;}
+.book__carousel{ padding: 0 50px; }
+
+
+.card{ 
+  width: 87%;
+  overflow: hidden;
+  border: none;
+}
+a.card__info{text-decoration: none; color: #000; position: relative;}
+.card__option{
+  position: absolute; top: 20px; right: -10px;
+  opacity: 0; transition: .4s;
+}
+a.card__info:hover > .card__image{ opacity: 0.5;}
+a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
+.card__option a:hover{background: var(--orange); color: #fff;}
+
+.card__option a{ 
+  color: #000;
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  padding: 5px; 
+  margin-bottom: 10px;
+  border-radius: 50%; 
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.card .card__image{ width: 100%; padding: 0;height: 320px !important;}
+.card .card__image img{ width: 100%; }
+.card__detail{ padding: 7px; text-align: center;}
+.book__title{ font-size: 18px;}
+.book__price{ font-size: 15px; }
+
+
+
+@media (max-width: 768px){ 
+    .book__list{ padding: 20px;}
+    .book__category{
+      font-size: 80px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      top: 10px;
+      left: -10px;
+    }
+    .book__category__heading{ margin-bottom: 10px; }
+    .book__category__heading h1{ font-size: 25px; }
+    .book__category__heading p{ font-size: 13px; }
+    .slick-arrow{width: 20px; height: 20px;}
+    .book__carousel{ padding: 0 10px 0 20px; }
+    .card__detail{ padding: 5px; text-align: left;}
+    .book__title{ font-size: 10px; margin-bottom: 3px;}
+    .book__price{ font-size: 12px; }
+}
