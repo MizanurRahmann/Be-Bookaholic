@@ -11,6 +11,7 @@
   --shadow-color:  0px 10px 30px rgba(118, 85, 225, 0.3);
   --box-shadow: 0px 6px 10px rgba(57, 56, 61, 0.205);
   --roboto-font: 'Roboto', sans-serif;
+  --anton-font: 'Anton', sans-serif;
 }
 
 *{
@@ -19,7 +20,6 @@
 }
 
 body {
-  background-color: var(--grey-light);
   font-family: 'Oswald', sans-serif;
 }
 

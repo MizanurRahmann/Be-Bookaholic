@@ -30,7 +30,7 @@
 }
 .slick-arrow.slick-prev{margin-left: 20px !important;}
 .slick-arrow.slick-next{margin-right: 20px !important;}
-.book__carousel{ padding: 0 50px; background: var(--grey-light);}
+.book__carousel{ padding: 0 50px;}
 
 
 /* ======= CARD PART ======== */
