@@ -1,7 +1,8 @@
 /* ======= CAROUSEL PART ======== */
 .book__list{ width: 100% !important; padding: 70px; position: relative; overflow: hidden;}
 .book__category{
-  font-size: 200px;
+  font-family: var(--anton-font);
+  font-size: 250px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -9,13 +10,17 @@
   height: 80%;
   width: 50%;
   position: absolute;
-  top: -50px;
+  top: 0;
   left: 50px;
   margin-left: 50px;
   z-index: -1;
 }
-.book__category__heading h1{ position: relative; font-size: 40px;}
+.book__category__heading p{font-weight: 300; font-size: 22px; color: #333; transition: .3s;}
+.book__category__heading p:hover{color: var(--blue-light); cursor: pointer;}
+.book__category__heading h1{ position: relative; font-size: 50px; font-family: var(--anton-font);}
 .book__category__heading{
+  margin-left: 30px;
+  margin-right: 60px;
   margin-bottom: 20px;
   display: flex; justify-content: space-between;  align-items: flex-end; 
 }
@@ -38,9 +43,6 @@
   width: 87%;
   overflow: hidden;
   border: none;
-}
-.card__detail{
-  background: var(--grey-light);
 }
 a.card__info{text-decoration: none; color: #000; position: relative;}
 .card__option{
@@ -65,8 +67,8 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .card .card__image{ width: 100%; padding: 0; height: 320px !important;}
 .card .card__image img{ width: 100%; }
 .card__detail{ padding: 7px; text-align: center;}
-.book__title{ font-size: 18px;}
-.book__price{ font-size: 15px; }
+.book__title{ font-size: 20px; font-weight: 300;}
+.book__price{ font-size: 18px; font-weight: 600; color: var(--orange);}
 
 
 
@@ -79,7 +81,7 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
       top: 10px;
       left: -10px;
     }
-    .book__category__heading{ margin-bottom: 10px; }
+    .book__category__heading{ margin-bottom: 10px; margin-left: 5px; margin-right: 10px;}
     .book__category__heading h1{ font-size: 25px; }
     .book__category__heading p{ font-size: 13px; }
     .slick-arrow{width: 20px; height: 20px;}

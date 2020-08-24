@@ -1,5 +1,5 @@
 /* ============ NAVBAR =============*/
-.navbar{ padding-left: 70px; padding-right: 70px; background: #F8F9FA;}
+.navbar{ padding-left: 70px; padding-right: 70px; padding-bottom: 17px; background: #FFF;}
 .navbar-brand{ padding: 5px 15px; border: 2px solid #000; border-radius: 5px; font-size: 15px; color: #000;}
 .navbar__navigation-items ul{ list-style: none; margin: 0; padding: 0; display: flex;}
 .navbar__navigation-items{
@@ -114,7 +114,7 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
 /* Media query */
 @media (min-width: 769px){.btn__toggler{ display: none; }}
 @media (max-width: 768px){
-    .navbar{ padding-left: 20px; padding-right: 20px;}
+    .navbar{ padding-left: 20px; padding-right: 20px; padding-bottom: 0}
     .navbar__navigation-items{ display: none; }
     .logo i{ font-size: 15px; }
     .logo div{ height: 11px; width: 11px; font-size: 8px; top: 55%; left: 50%; }

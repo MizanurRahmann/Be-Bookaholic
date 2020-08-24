@@ -5,7 +5,7 @@ import '../../styles/css/Announcement.css'
 
 function Announcement() {
     return (
-        <div>
+        <div className="announcement">
             <Banner />
             <Offers />
         </div>
