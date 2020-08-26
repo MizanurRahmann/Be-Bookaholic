@@ -1,33 +1,46 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-function Login() {
+function Login(props) {
     return (
-        <div class="login__container-container">
+        <motion.div 
+            initial={{x: '110%'}} 
+            animate={{x: '0'}} 
+            transition={{ duration: .2, type: 'spring'}}
+        >
             <form>
                 {/* <img class="avatar" src="style/img/avatar.svg" /> */}
                 <h2>WELCOME</h2>
+                
+                {/* input div for email */}
                 <div class="input_div user">
                     <div class="i">
-                        <i class="fas fa-user"></i>
+                    <i class="far fa-envelope"></i>
                     </div>
                     <div>
-                        <h5>Username</h5>
-                        <input type="text" class="input" />
+                        <input type="email" class="input" placeholder="Email" />
                     </div>
                 </div>
+
+                {/* input div for password */}
                 <div class="input_div pass">
                     <div class="i">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
-                        <h5>Password</h5>
-                        <input type="password" class="input" />
+                        <input type="password" class="input" placeholder="Password" />
                     </div>
                 </div>
-                <a href="#">Forget Password?</a>
-                <input type="submit" class="btn" value="Login" />
+
+
+                <p className="forget__pass" href="#">Forget Password?</p>
+                <input type="submit" class="btn__submit" value="Login" />
+                
+                <div  onClick={props.typeChange} className="signup__link">
+                    Have an account? Signup here.
+                </div>
             </form>
-        </div>
+        </motion.div>
     )
 }
 

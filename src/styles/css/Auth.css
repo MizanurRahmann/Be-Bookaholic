@@ -1,40 +1,23 @@
-.wave{
-    position: fixed;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
+.auth{ height: 100vh; width: 100%; display: flex; flex-wrap: wrap; overflow: hidden;}
+.auth__container{ 
+    width: 50%; height: 100%; 
+    display: flex; justify-content: center; align-items: center;
 }
-.login__container{
-    border-image-width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 7rem;
-    padding: 0 2rem;
-}
-.img{
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
-}  
-.img img{
-    width: 450px;
-}
-.login__container-container{
-   display: flex;
-   align-items: center;
-   text-align: center;
-}
-form{ width: 360px; }
-.avatar{ width: 100px; }
-form h2{
-   font-size: 2.9rem;
-   text-transform: uppercase;
-   margin: 15px 0;
-   color: #333;
-}
+.auth__image{ width: 70%;}
+.auth_function{ width: 100%; }
+.signup__link{ font-size: 18px; color: var(--blue); text-align: center; }
+.signup__link:hover{ color: var(--blue-dark); cursor: pointer; }
 
+
+/* login form */
+form{ width: 400px; font-family: var(--roboto-font);}
+form h2{ 
+    font-weight: 300;
+    font-size: 2rem; 
+    text-transform: uppercase; 
+    text-align: center; 
+    margin: 15px 0; 
+color: #333; }
 .input_div{
     display: grid;
     position: relative;
@@ -45,98 +28,58 @@ form h2{
 }
 .input_div:after, .input_div:before{
     content: '';
-    position: absolute;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
+    position: absolute; bottom: -2px;
+    width: 0; height: 2px;
     background-color: var(--blue);
 }
-.input_div:after{
-   right: 50%;
-}
-.input_div:before{
-   left: 50%;
-}
-
-.input_div.focus .i i{
-   color: var(--blue);
-}
-.input_div.focus div h5{
-    top: -5px;
-    font-size: 15px;
-}
-.input_div.focus:after, .input_div.focus:before{
-    width: 50%;
-}
-.input_div.user{
-   margin-top: 0;
-}
-.input_div.pass{
-    margin-bottom: 4px;
-}
+.input_div:after{ right: 50%; }
+.input_div:before{ left: 50%; }
+.input_div.user{ margin-top: 0; }
+.input_div.pass{ margin-bottom: 4px; }
 
 
-.i{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.i i{
-    color: #d9d9d9;
-    transition: .3s;
-}
+.i{ display: flex; justify-content: center; align-items: center; }
+.i i{ color: #d9d9d9; transition: .3s; }
 
-.input_div > div{
-    position: relative;
-    height: 45px;
-}
+.input_div > div{ position: relative; height: 45px; }
 .input_div > div h5{
     position: absolute;
-    top: 50%;
-    left: 10px;
+    top: 50%; left: 10px;
     transform: translateY(-50%);
     color: #999;
-    font-size: 12px;
+    font-size: 16px;
     transition: .3s;
 }
 .input{
    position: absolute;
-   width: 100%;
-   height: 100%;
-   top: 0;
-   left: 0;
-   border: none;
-   outline: none;
+   width: 100%; height: 100%;
+   top: 0; left: 0;
+   border: none; outline: none;
    background: none;
    padding: 0.5rem 0.7rem;
-   font-size: 1.1rem;
-   font-family: 'Poppins', sans-serif;
+   font-size: 18px;
    color: #555;
 }
-a{
+p.forget__pass{
     display: block;
     text-align: right;
     text-decoration: none;
     color: #999;
     font-size: 0.9rem;
     transition: .3s;
+    cursor: pointer;
 }
-a:hover{ color: var(--blue); }
-.btn{
+p.forget__pass:hover{ color: var(--blue); }
+.btn__submit{
     display: block;
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
+    width: 100%; height: 50px;
+    border-radius: 10px;
     margin: 1rem 0;
-    font-size: 1.2rem;
-    outline: none;
-    border: none;
+    font-size: 1.2rem; color: #fff;
+    outline: none; border: none;
     background-image: linear-gradient(to right, var(--blue), var(--blue-dark), var(--blue));
-    color: #fff;
     text-transform: uppercase;
     background-size: 200%;
     transform: .5s;
 }
-.btn:hover{
-   background-position: right;
-}
+.btn__submit:hover{ background-position: right; }
