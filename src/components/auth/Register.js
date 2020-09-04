@@ -15,9 +15,9 @@ function Register(props) {
 
     //Clear errors on load
     useEffect(() => {
-        setErrors(null);
+        setErrors({});
         return () => {
-            setErrors(null);
+            setErrors({});
         };
     }, []);
 
@@ -108,8 +108,8 @@ return (
 
             <input type="submit" className="btn__submit" value="Register" onClick={register} />
 
-            <div onClick={props.typeChange} className="signup__link">
-                Already Have an account? Signin here.
+            <div onClick={props.changeLogin} className="signup__link">
+                Already Have an account? Login here.
             </div>
         </form>
     </motion.div>

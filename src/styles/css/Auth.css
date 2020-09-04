@@ -5,7 +5,10 @@
 }
 .auth__image{ width: 70%;}
 .auth_function{ width: 100%; }
-.signup__link{ font-size: 18px; color: var(--blue); text-align: center; }
+.signup__link{ 
+    display: flex; justify-content: space-between;
+    font-size: 18px; color: var(--blue); text-align: center; 
+}
 .signup__link:hover{ color: var(--blue-dark); cursor: pointer; }
 
 

@@ -23,7 +23,7 @@ function App() {
         });
         dispatch({ type: 'SET_AUTHENTICATED' });
       } else{
-        dispatchEvent({type: 'SET_LOGOUT'})
+        dispatch({type: 'SET_LOGOUT'})
       }
     })
   }, []);
