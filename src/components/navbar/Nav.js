@@ -2,9 +2,16 @@ import React from 'react'
 import DrawerTogglerButton from './DrawerTogglerButton'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../Context/StateProvider';
+import { auth } from '../../firebase/util';
 
 const Nav = props => {
-    const [state] = useStateValue();
+    const [state, dispatch] = useStateValue();
+
+    const logout = () => {
+        auth.signOut().then(() => {
+            dispatch({type: 'SET_LOGOUT'});
+        })
+    }
 
     return (
         <header className="header">
@@ -18,8 +25,13 @@ const Nav = props => {
                 <div className="logo__box">
                     {
                         state.authenticated
-                        ? <Link className="sign__in" to='/login'>{state.user.name}</Link>
-                        : <Link className="sign__in" to='/login'>Login</Link>
+                        ? (
+                            <div>
+                                <div className="sign__in" to=''>{state.user.name}</div>
+                                <div onClick={logout}>Logout</div>
+                            </div>
+                        )
+                        : <Link className="sign__in" to='/login'>Join</Link>
                     }
                     <Link className="logo" to='/checkout'>
                         <i className="fas fa-shopping-bag"></i>

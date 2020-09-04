@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Checkout from './components/checkout/Checkout';
 import BookList from './components/books/BookList';
@@ -10,8 +10,9 @@ import { auth } from './firebase/util';
 import { useStateValue } from './components/Context/StateProvider';
 
 function App() {
+  const [state, dispatch] = useStateValue();
   
-  const [state, dispatch] = useStateValue()
+
   //if user loged in
   useEffect(() => {
     auth.onAuthStateChanged(userAuth => {
@@ -32,8 +33,11 @@ function App() {
     <div style={{ height: "100%" }}>
       <Router>
         <Navbar />
-        <Route exact path='/login' component={Auth}></Route>
-        <Route exact path='/checkout' component={Checkout}></Route>
+        <Route 
+          exact path='/login' 
+          render={() => (state.authenticated ? <Redirect to='/' /> : <Auth />)} 
+        />
+        <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/'>
             <main>
               <Announcement />

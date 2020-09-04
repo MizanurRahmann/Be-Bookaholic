@@ -51,9 +51,11 @@ a.card__info{text-decoration: none; color: #000; position: relative;}
 }
 a.card__info:hover > .card__image{ opacity: 0.5;}
 a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
-.card__option div:hover{background: var(--orange); color: #fff;}
+.card__option .one:hover, .two:hover, .three:hover{
+  background: var(--orange); color: #fff;
+}
 
-.card__option div{ 
+.card__option .one, .two, .three{ 
   color: #000;
   height: 50px;
   width: 50px;
