@@ -1,54 +1,119 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 import { motion } from 'framer-motion';
+import { auth } from '../../firebase/util';
+import { useStateValue } from '../Context/StateProvider';
 
 function Register(props) {
-    return (
-        <motion.div initial={{x: '110%'}} animate={{x: '0'}} transition={{ duration: .3, type: 'spring' }}>
-            <form>
-                {/* <img class="avatar" src="style/img/avatar.svg" /> */}
-                <h2>Start your Journey</h2>
-                
-                {/* input div for username */}
-                <div class="input_div">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div>
-                        <h5>Username</h5>
-                        <input type="text" class="input" />
-                    </div>
-                </div>
 
-                {/* input div for email */}
-                <div class="input_div">
-                    <div class="i">
-                        <i class="far fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h5>Email</h5>
-                        <input type="email" class="input" />
-                    </div>
-                </div>
+    const history = useHistory()
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({});
+    const [state, dispatch] = useStateValue();
 
-                {/* input div for password */}
-                <div class="input_div">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div>
-                        <h5>Password</h5>
-                        <input type="password" class="input" />
-                    </div>
-                </div>
+    //Clear errors on load
+    useEffect(() => {
+        setErrors(null);
+        return () => {
+            setErrors(null);
+        };
+    }, []);
 
-                <input type="submit" class="btn__submit" value="Register" />
-                
-                <div  onClick={props.typeChange} className="signup__link">
-                    Already Have an account? Signin here.
+    //Registration logic
+    const register = event => {
+        event.preventDefault();
+        let Errors = {};
+        dispatch({ type: 'SET_LOADING' });
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .then(res => {
+                return res.user.updateProfile({ displayName: username })
+                    .then(() => {
+                        dispatch({
+                            type: 'CREATE_USER',
+                            user: { email: res.user.email, name: res.user.displayName }
+                        });
+                        dispatch({ type: 'SET_AUTHENTICATED' });
+                        dispatch({ type: 'CLEAR_LOADING' });
+                    })
+                    .then(() => {
+                        history.push('/');
+                    })
+            })
+            .catch(error => {
+                dispatch({ type: 'CLEAR_LOADING' });
+                if (error.code === "auth/invalid-email")
+                    Errors.email = error.message;
+                if (error.code === "auth/email-already-in-use")
+                    Errors.email = error.message;
+                setErrors(Errors);
+            });
+}
+
+return (
+    <motion.div initial={{ x: '110%' }} animate={{ x: '0' }} transition={{ duration: .3, type: 'spring' }}>
+        <form>
+            <h2>Start your Journey</h2>
+
+            {/* input div for username */}
+            <div className="input_div">
+                <div className="i">
+                    <i className="fas fa-user"></i>
                 </div>
-            </form>
-        </motion.div>
-    )
+                <div>
+                    <input
+                        type="text"
+                        className="input"
+                        placeholder="Username"
+                        value={username}
+                        onChange={event => { setUsername(event.target.value) }} 
+                    />
+                </div>
+            </div>
+
+            {/* input div for email */}
+            <div className="input_div">
+                <div className="i">
+                    <i className="far fa-envelope"></i>
+                </div>
+                <div>
+                    <input
+                        type="email"
+                        className="input"
+                        placeholder="Email" 
+                        value={email}
+                        onChange={event => setEmail(event.target.value)} 
+                    />
+                    {errors.email && (<small className="textError">{errors.email}</small>)}
+                </div>
+            </div>
+
+            {/* input div for password */}
+            <div className="input_div">
+                <div className="i">
+                    <i className="fas fa-lock"></i>
+                </div>
+                <div>
+                    <input
+                        type="password"
+                        className="input"
+                        placeholder="Password"
+                        value={password}
+                        onChange={event => setPassword(event.target.value)}
+                    />
+                </div>
+            </div>
+
+            <input type="submit" className="btn__submit" value="Register" onClick={register} />
+
+            <div onClick={props.typeChange} className="signup__link">
+                Already Have an account? Signin here.
+            </div>
+        </form>
+    </motion.div>
+)
 }
 
 export default Register

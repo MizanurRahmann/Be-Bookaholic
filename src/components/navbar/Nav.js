@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useStateValue } from '../Context/StateProvider';
 
 const Nav = props => {
-    const [{basket}] = useStateValue();
+    const [state] = useStateValue();
 
     return (
         <header className="header">
@@ -16,10 +16,14 @@ const Nav = props => {
                     <button type="button"><i className="fas fa-search header__searchIcon"></i></button>
                 </div>
                 <div className="logo__box">
-                    <Link className="sign__in" to='/login'>Login</Link>
+                    {
+                        state.authenticated
+                        ? <Link className="sign__in" to='/login'>{state.user.name}</Link>
+                        : <Link className="sign__in" to='/login'>Login</Link>
+                    }
                     <Link className="logo" to='/checkout'>
                         <i className="fas fa-shopping-bag"></i>
-                        <div>{basket.length}</div>
+                        <div>{state.basket.length}</div>
                     </Link>
                 </div>
             </nav>
