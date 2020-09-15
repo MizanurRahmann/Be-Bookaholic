@@ -6,14 +6,30 @@ function Book({ id, name, price }) {
     const [state, dispatch] = useStateValue();
 
     const addToCart = () => {
-        dispatch({
-            type: 'ADD_TO_BASKET',
-            item: {
-                id: id,
-                name: name,
+        let found = false;
+
+        //Check book is in basket?
+        state.basket.map(book => {
+            if(book.id == id){
+                book.amount++;
+                found = true;
             }
         })
+
+        //If it is not found the add to basket
+        if(!found){
+            dispatch({
+                type: 'ADD_TO_BASKET',
+                item: {
+                    id: id,
+                    name: name,
+                    price: price,
+                    amount: 1
+                }
+            })
+        }
     }
+
 
     const imageUrl = `https://firebasestorage.googleapis.com/v0/b/br-bookaholic.appspot.com/o/BookImages%2F${id}.jpg?alt=media&token=6316abd8-eee5-4e16-a446-9c9ad9a2316d`;
     return (
