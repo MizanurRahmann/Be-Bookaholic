@@ -7,30 +7,67 @@ function Checkout() {
     const [state, dispatch] = useStateValue();
     const [total, setTotal] = useState(0);
 
+    //Calculate total cost for basket items
     const calcTotal = () => {
         let tp = 0;
         state.basket.map(book => {
-            tp += parseInt(book.price);
+            tp += book.amount * parseInt(book.price);
         })
         setTotal(tp);
+    };
+
+    //Delete from basket
+    const deleteItem = id => {
+        dispatch({
+            type: 'REMOVE_FROM_BASKET',
+            item: { id: id }
+        })
     }
 
+    //Increase a item
+    const increaseItem = id => {
+        state.basket.map(book => {
+            if(book.id === id){
+                book.amount++;
+                calcTotal();
+            }
+        })
+    };
+
+    //Deccrease a item
+    const decreaseItem = id => {
+        state.basket.map(book => {
+            if(book.id === id && book.amount > 0){
+                book.amount--;
+                calcTotal();
+            }
+            if(book.amount == 0){
+                deleteItem();
+            }
+        })
+    };
+
+    //Calculate total if any kind of basket value changed
     useEffect(() => {
         calcTotal();
+    }, [JSON.stringify(state.basket)])
 
-    }, [state.basket])
 
     return (
         <div style={{marginTop: "70px"}} className="checkout">
             <div className="checkout__items">
                 <h1>My Orders</h1>
-                <div className="item">
+                <div className="ideleteItemtem">
                     {state.basket.map(item => ( 
-                        <CheckoutItem 
+                        <CheckoutItem
+                            key={item.id}
                             id={item.id} 
                             price={item.price} 
                             name={item.name}
                             amount={item.amount}
+                            increaseItem={increaseItem}
+                            decreaseItem={decreaseItem}
+                            deleteItem = {deleteItem}
                             /> ))}
                 </div>
             </div>
