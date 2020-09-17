@@ -3,7 +3,8 @@ import { useStateValue } from '../Context/StateProvider';
 import { Link } from 'react-router-dom';
 import CheckoutItem from './CheckoutItem';
 import '../../styles/css/Checkout.css';
-import notFoundImage from '../../styles/images/note.png'
+import notFoundImage from '../../styles/images/checkout/note.png';
+import truck from '../../styles/images/checkout/shipping.png';
 
 function Checkout() {
     const [state, dispatch] = useStateValue();
@@ -85,23 +86,31 @@ function Checkout() {
             </div>
             <div className="checkout__calc">
                 <h1>Checkout Summary</h1>
+                <div className="checkout__add">
+                    <img src= {truck} alt="delivery-truck" />
+                    <div className="checkout__add-text">
+                        <h3>to get <span>15%</span> offer</h3>
+                        <p>buy books more than <span>৳1000</span></p>
+                    </div>
+                </div>
                 <div className="calc">
-                        <div className="calc__item">
-                            <div className="item__name">Subtotal</div> <div>৳ {total}</div>
+                    <div className="calc__item">
+                        <div className="item__name">Subtotal</div> <div>৳ {total}</div>
+                    </div>
+                    <div className="calc__item">
+                        <div className="item__name">Shipping</div> <div>৳ 50</div>
+                    </div>
+                    <div className="calc__item">
+                        <div className="item__name">Total</div>
+                        <div className="totalCost">
+                            {
+                                total >= 1000
+                                ? <h4><span> -15% </span>৳ {(total - total * 0.15) + 50} </h4>
+                                : <h4>৳ {total ? total + 50 : 0} </h4>
+                            }
                         </div>
-                        <div className="calc__item">
-                            <div className="item__name">Shipping</div> <div>৳ 50</div>
-                        </div>
-                        <div className="calc__item">
-                            <div className="item__name">Total</div> <div>৳ {total ? total + 50 : 0}</div>
-                        </div>
-                        <div className="calc__item">
-                            <div className="item__name">Payable total</div>
-                            <div style={{fontWeight: "600"}}>৳ {total ? total + 50 : 0}</div>
-                        </div>
-                        <div className="gotoShipping">
-                            <Link to='/' className="btn-shipping">Go to shipping page</Link>
-                        </div>
+                    </div>
+                    <Link to='/' className="btn-shipping">Go to shipping page</Link>
                 </div>
             </div>
         </div>
