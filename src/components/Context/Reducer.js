@@ -1,5 +1,6 @@
 export const initialState = {
     basket: [],
+    total: 0,
     user: {name: ''},
     authenticated: false,
     loading: false
@@ -14,7 +15,10 @@ function reducer(state, action){
                 basket: [...state.basket, action.item]
             };
         case 'REMOVE_FROM_BASKET':
-            return state
+            return {
+                ...state,
+                basket: state.basket.filter((value) => { return value.id !== action.itemId; })
+            }
         case 'CREATE_USER':
             return{
                 ...state,

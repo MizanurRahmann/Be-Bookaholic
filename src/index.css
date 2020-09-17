@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--roboto-font);
 }
 
 main{ margin-top: 135px; }

@@ -23,7 +23,7 @@ function CheckoutItem(props) {
                 </div>
             </div>
             <div className="item__total">৳ {amount * price}</div>
-            <div className="item__delete-btn"><i className="fas fa-times"></i></div>
+            <div className="item__delete-btn" onClick={itemDelete}><i className="fas fa-times"></i></div>
 
         </div>
     )

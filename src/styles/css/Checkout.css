@@ -63,3 +63,40 @@
 .calc__item .item__name{
     font-weight: 300;
 }
+
+.notFound__block{
+    width: 100%;
+    height: 70vh;
+    text-align: center;
+}
+.notFound__block img{
+    margin-bottom: 30px;
+}
+.notFound__block h2{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: var(--roboto-font);
+}
+.notFound__block h2 a{
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 400;
+    transition: .4s;
+}
+.notFound__block h2 a:hover{
+    color: var(--blue-dark);
+}
+.gotoShipping{
+    width: 100%;
+    padding: 15px 40px;
+    background: var(--blue-dark);
+    text-align: center; border-radius: 10px;
+}
+a.btn-shipping{
+    text-decoration: none;
+    color: #fff; font-size: 18px;
+    cursor: pointer;
+}
+a.btn-shipping:hover{
+    color: #fff;
+}
