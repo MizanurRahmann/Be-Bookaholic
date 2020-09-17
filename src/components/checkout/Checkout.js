@@ -62,7 +62,7 @@ function Checkout() {
         <div style={{marginTop: "70px"}} className="checkout">
             <div className="checkout__items">
                 <h1>My Orders</h1>
-                <div className="ideleteItemtem">
+                <div className="items">
                     {state.basket.length > 0
                         ? state.basket.map(item => ( 
                             <CheckoutItem
@@ -76,7 +76,7 @@ function Checkout() {
                                 deleteItem = {deleteItem}
                                 /> ))
                             : <div className="notFound__block">
-                                <img src={notFoundImage} alt="notfound" height="70%"/>
+                                <img src={notFoundImage} alt="notfound"/>
                                 <h2>Sorry, you dont have any book in your cart. 
                                     <Link to='/'> Want to buy some books?</Link>
                                 </h2>

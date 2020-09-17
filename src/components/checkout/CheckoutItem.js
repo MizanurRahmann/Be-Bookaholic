@@ -16,9 +16,10 @@ function CheckoutItem(props) {
             <div className="item__name">{name}</div>
             <div className="item__price">৳ {price}</div>
             <div className="item__quantity">
-            <div className="amount">{amount}</div>
+                <div className="amount">{amount}</div>
                 <div className="amount__controller">
                     <div onClick={itemIncrease}> + </div>
+                    <div className="amount">{amount}</div>
                     <div onClick={itemDecrease}> - </div>
                 </div>
             </div>

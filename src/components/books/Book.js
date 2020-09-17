@@ -44,7 +44,7 @@ function Book({ id, name, price }) {
                         ? <div className="one" onClick={addToCart}><i className="fas fa-cart-arrow-down"></i></div>
                         : <Link className="one" to='/login' ><i className="fas fa-cart-arrow-down"></i></Link>
                     }
-                    <div className="two"><i className="fas fa-book-open"></i></div>
+                    <Link to="/" className="two"><i className="fas fa-book-open"></i></Link>
                     <div className="three"><i className="far fa-heart"></i></div>
                 </div>
                 <div className="card__detail">
