@@ -1,26 +1,37 @@
 export const initialState = {
     basket: [],
     total: 0,
-    user: {name: ''},
+    user: { name: '' },
     authenticated: false,
     loading: false
 }
 
-function reducer(state, action){
+function reducer(state, action) {
 
-    switch(action.type){
+    switch (action.type) {
         case 'ADD_TO_BASKET':
-            return {
-                ...state,
-                basket: [...state.basket, action.item]
-            };
+            let found = false;
+            //Check book is in basket?
+            state.basket.map(book => {
+                if (book.id === action.item.id) {
+                    book.amount++;
+                    found = true;
+                }
+            })
+            //If it is not found the add to basket
+            if (!found){
+                return {
+                    ...state,
+                    basket: [...state.basket, {...action.item, amount: 1}]
+                };
+            }
         case 'REMOVE_FROM_BASKET':
             return {
                 ...state,
                 basket: state.basket.filter((value) => { return value.id !== action.itemId; })
             }
         case 'CREATE_USER':
-            return{
+            return {
                 ...state,
                 user: action.user
             };
@@ -35,16 +46,6 @@ function reducer(state, action){
                 authenticated: false,
                 user: null,
             };
-        case 'SET_LOADING':
-            return{
-                ...state,
-                loading: true
-            }
-        case 'CLEAR_LOADING':
-            return{
-                ...state,
-                loading: false
-            }
         default:
             return state;
     }

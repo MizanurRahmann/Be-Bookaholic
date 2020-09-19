@@ -5,22 +5,17 @@ import Book from './Book';
 import BooksSkeleton from './BooksSkeleton';
 import '../../styles/css/BookList.css';
 import settings from '../../styles/js/SliderConfig';
-import { useStateValue } from '../Context/StateProvider';
 
 function BookList() {
     const [classicBook, setClassicBook] = useState([]);
     const [fictionBook, setFictionBook] = useState([]);
     const [nonFictionBook, setNonFictionBook] = useState([]);
     const [islamikBook, setIslamikBook] = useState([]);
-    const [state, dispatch] = useStateValue();
     const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
-        // dispatch({ type: 'SET_LOADING' });
         setLoading(true);
-        console.log("vitore: ", loading);
-
         const timing = setTimeout(() => {
 
             const BooksTable = db.collection('Books');
@@ -52,14 +47,12 @@ function BookList() {
                     querySnapshot.forEach(doc => { islamik.push({ id: doc.id, ...doc.data() }); });
                     setIslamikBook(islamik);
                 })
-            // dispatch({ type: 'CLEAR_LOADING' });
             setLoading(false)
 
-        }, 4000);
+        }, 2000);
         return () => clearTimeout(timing);
     }, [])
 
-    console.log(loading);
 
     return (
         <div style={{ width: "100%" }}>

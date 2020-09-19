@@ -75,14 +75,46 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 
 /* BOOK DETAILS */
 .book__details{ margin-top: 76px; width: 100%; display: flex; flex-wrap: wrap; }
-.book__image-block{ width: 40%; min-height: calc(100vh - 8px); position: relative; }
-.book__image-block img{
-  height: 70vh;
-  position: absolute;
-  top: 5%; left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+.book__image-block{ 
+  width: 40%; min-height: calc(100vh - 80px);
+  display: flex; justify-content: center; align-items: center;
 }
+.frame{
+  height: 70vh; width: 60%;
+  display: block; position: relative;
+  perspective-origin: 0 50% 0;
+  perspective: 2000px;
+}
+.page{
+  height: 70vh; width: 100%;
+  position: absolute; top: 0; left: 0;
+  background: #fff;
+  transform-origin: 0 50% 0;
+  transform-style: preserve-3d;
+  background-size: 100%;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.075) 97%, transparent);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
+  /* border: 1px solid red */
+}
+.cover{
+  z-index: 2 !important;
+  display: block;
+  width: 100%; height: 70vh;
+  background: #ccc !important;
+  transform: rotateY(0deg) translateZ(0px);
+  box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.cover img{width: 100%; height: 100%;}
+
+.page1 { transform: rotateY(0deg) translateZ(0); }
+.page2 { transform: rotateY(0deg) translateZ(0); }
+.page3 { transform: rotateY(0deg) translateZ(0); }
+.frame:hover .page3 { transform: rotateY(-26deg); box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.2);}
+.frame:hover .page2 { transform: rotateY(-20deg); box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.2);}
+.frame:hover .page1 { transform: rotateY(-10deg); box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.2);}
+.frame:hover .cover { transform: rotateY(-32deg); box-shadow: none;}
+
+
 .book__info-block{ width: 60%; padding: 30px 10px; }
 .book__info-block .name{
   font-weight: 400; font-size: 50px;
@@ -99,7 +131,7 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
   width: 30px; height: 3px;
   background: var(--orange);
 }
-.book__info-block .ratting{  margin: 25px 0; font-size: 20px; display: flex; align-items: center; }
+.book__info-block .ratting{  margin: 25px 0 20px 0; font-size: 20px; display: flex; align-items: center; }
 .book__info-block .ratting__count{ margin-left: 50px; font-size: 17px; }
 .book__info-block .ratting__count i{ margin-right: 10px; }
 .book__info-block .description{ margin-bottom: 10px; padding: 0 70px 0 0; font-size: 16px; font-weight: 300;}
@@ -107,25 +139,23 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
   color: var(--blue); font-size: 17px; font-weight: 400;
   cursor: pointer; margin-left: 10px;
 }
-.price{  margin-bottom: 20px; font-size: 40px;  color: var(--blue-dark); font-weight: 300;}
-.price span{ font-size: 20px; background: #3366FF0F; padding: 10px; border-radius: 10px;}
-.price strike { font-size: 18px; color: #ccc; margin: 0 20px 0 10px;}
+.book__info-block .price{  margin-bottom: 20px; font-size: 40px;  color: var(--blue-dark); font-weight: 300;}
+.book__info-block .price span{ font-size: 20px; background: #3366FF0F; padding: 5px 10px; border-radius: 10px;}
+.book__info-block .price strike { font-size: 18px; color: #ccc; margin: 0 20px 0 10px;}
 
 .book__info-block .others-info{ display: flex; align-items: center; margin-bottom: 10px; font-size: 16px;}
 .book__info-block .others-info .heading{ width: 30%; font-size: 15px;  text-transform: uppercase; font-weight: 400; }
 .book__info-block .others-info .info{  width: 70%; font-weight: 300; }
 
-.addToCart{
-  display: inline-block;
-  padding: 10px 30px; margin-top: 20px; font-size: 18px;
-  color: var(--blue-dark); text-align: center;
-  border: 2px solid var(--blue-dark); border-radius: 5px;
-  cursor: pointer;
+.addToCart, .addedToCart{
+  display: inline-block; min-width: 30%;
+  padding: 10px 30px; margin-top: 25px;
+  text-align: center; text-transform: uppercase;
+  border-radius: 5px; cursor: pointer; transition: .3s;
 }
-.addToCart:hover{
-  background: linear-gradient(-45deg, var(--blue-dark) 0%, var(--blue) 100%); 
-  color: #fff; border: none;
-}
+.addToCart{ background: linear-gradient(-45deg, var(--blue-dark) 0%, var(--blue) 100%); color: #fff; font-size: 18px;}
+.addedToCart{ background: #ccc; color: #444; font-size: 15px; }
+.addToCart:hover{ background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%); }
 
 
 @media (max-width: 768px){ 

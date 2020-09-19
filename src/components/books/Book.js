@@ -1,33 +1,19 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useStateValue } from '../Context/StateProvider';
 
 function Book({ id, name, price }) {
     const [state, dispatch] = useStateValue();
 
     const addToCart = () => {
-        let found = false;
-
-        //Check book is in basket?
-        state.basket.map(book => {
-            if(book.id === id){
-                book.amount++;
-                found = true;
+        dispatch({
+            type: 'ADD_TO_BASKET',
+            item: {
+                id: id,
+                name: name,
+                price: price
             }
         })
-
-        //If it is not found the add to basket
-        if(!found){
-            dispatch({
-                type: 'ADD_TO_BASKET',
-                item: {
-                    id: id,
-                    name: name,
-                    price: price,
-                    amount: 1
-                }
-            })
-        }
     }
 
 
@@ -40,9 +26,9 @@ function Book({ id, name, price }) {
                 </div>
                 <div className="card__option">
                     {
-                        state.authenticated 
-                        ? <div className="one" onClick={addToCart}><i className="fas fa-cart-arrow-down"></i></div>
-                        : <Link className="one" to='/login' ><i className="fas fa-cart-arrow-down"></i></Link>
+                        state.authenticated
+                            ? <div className="one" onClick={addToCart}><i className="fas fa-cart-arrow-down"></i></div>
+                            : <Link className="one" to='/login' ><i className="fas fa-cart-arrow-down"></i></Link>
                     }
                     <Link to={"/details/" + id} className="two"><i className="fas fa-book-open"></i></Link>
                     <div className="three"><i className="far fa-heart"></i></div>
