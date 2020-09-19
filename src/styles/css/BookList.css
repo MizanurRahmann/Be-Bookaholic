@@ -77,7 +77,7 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .book__details{ margin-top: 76px; width: 100%; display: flex; flex-wrap: wrap; }
 .book__image-block{ width: 40%; min-height: calc(100vh - 8px); position: relative; }
 .book__image-block img{
-  height: 70%;
+  height: 70vh;
   position: absolute;
   top: 5%; left: 50%;
   transform: translateX(-50%);
@@ -103,7 +103,11 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .book__info-block .ratting__count{ margin-left: 50px; font-size: 17px; }
 .book__info-block .ratting__count i{ margin-right: 10px; }
 .book__info-block .description{ margin-bottom: 10px; padding: 0 70px 0 0; font-size: 16px; font-weight: 300;}
-.price{  margin-bottom: 40px; font-size: 40px;  color: var(--blue-dark); font-weight: 300;}
+.book__info-block .description span{ 
+  color: var(--blue); font-size: 17px; font-weight: 400;
+  cursor: pointer; margin-left: 10px;
+}
+.price{  margin-bottom: 20px; font-size: 40px;  color: var(--blue-dark); font-weight: 300;}
 .price span{ font-size: 20px; background: #3366FF0F; padding: 10px; border-radius: 10px;}
 .price strike { font-size: 18px; color: #ccc; margin: 0 20px 0 10px;}
 

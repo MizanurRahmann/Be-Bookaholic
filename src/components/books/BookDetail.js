@@ -5,6 +5,11 @@ function BookDetail(props) {
     const BOOK_ID = props.match.params.id;
     const IMAGE_URL = `https://firebasestorage.googleapis.com/v0/b/br-bookaholic.appspot.com/o/BookImages%2F${BOOK_ID}.jpg?alt=media&token=6316abd8-eee5-4e16-a446-9c9ad9a2316d`;
     const [book, setBook] = useState({});
+    const [viewHandler, setViewHandler] = useState(true);
+
+    const shortView = description => {
+        return description && description.replace(/(([^\s]+\s\s*){50})(.*)/,"$1....");
+    }
 
     useEffect(() => {
         const BOOK_REF = db.collection('Books').doc(BOOK_ID);
@@ -17,7 +22,7 @@ function BookDetail(props) {
             .catch(error => {
                 console.log(error.message);
             })
-    }, [])
+    }, [viewHandler])
 
 
     return (
@@ -46,13 +51,16 @@ function BookDetail(props) {
                     </div>
                 </div>
                 <div className="description">
-                    { book.description 
-                        && book.description.replace(/(([^\s]+\s\s*){50})(.*)/,"$1....")}
+                    { viewHandler ? shortView(book.description) : book.description }
+                    { viewHandler 
+                        ? <span onClick={() => setViewHandler(false)}>More</span> 
+                        : <span onClick={() => setViewHandler(true)}>Less</span>
+                    }
                 </div>
                 <div className="price">
                     <span>{`${book.less && book.less}%`}</span> 
                     <strike>৳ {book.price}</strike> 
-                    ৳{book.price - (book.price * book.less/100)}
+                    ৳{Math.floor(book.price - (book.price * book.less/100))}
                 </div>
 
                 <div className="others-info">
