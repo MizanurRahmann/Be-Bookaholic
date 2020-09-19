@@ -49,6 +49,12 @@ function BookDetail(props) {
                     { book.description 
                         && book.description.replace(/(([^\s]+\s\s*){50})(.*)/,"$1....")}
                 </div>
+                <div className="price">
+                    <span>{`${book.less && book.less}%`}</span> 
+                    <strike>৳ {book.price}</strike> 
+                    ৳{book.price - (book.price * book.less/100)}
+                </div>
+
                 <div className="others-info">
                     <div className="heading">Publisher</div>
                     <div className="info">{book.publisher}</div>
@@ -68,10 +74,6 @@ function BookDetail(props) {
                 <div className="others-info">
                     <div className="heading">Languages</div>
                     <div className="info">{book.language}</div>
-                </div>
-                <div className="others-info">
-                    <div className="heading">Price</div>
-                    <div className="info price">৳ {book.price}</div>
                 </div>
 
                 <div className="addToCart">Add to Cart</div>
