@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Checkout from './components/checkout/Checkout';
 import BookList from './components/books/BookList';
+import BookDetail from './components/books/BookDetail';
 import Announcement from './components/banner/Announcement';
 import Auth from './components/auth/Auth';
 import { auth } from './firebase/util';
@@ -38,6 +39,7 @@ function App() {
           render={() => (state.authenticated ? <Redirect to='/' /> : <Auth />)} 
         />
         <Route exact path='/checkout' component={Checkout} />
+        <Route exact path='/details/:id' component={BookDetail} />
         <Route exact path='/'>
             <main>
               <Announcement />

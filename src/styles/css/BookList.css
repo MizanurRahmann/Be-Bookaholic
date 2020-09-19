@@ -73,6 +73,48 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .book__price{ font-size: 18px; font-weight: 600; color: var(--orange);}
 
 
+/* BOOK DETAILS */
+.book__details{ margin-top: 76px; width: 100%; display: flex; flex-wrap: wrap; }
+.book__image-block{ width: 40%; min-height: calc(100vh - 8px); position: relative; }
+.book__image-block img{
+  height: 70%;
+  position: absolute;
+  top: 5%; left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.book__info-block{ width: 60%; padding: 30px 10px; }
+.book__info-block .name{
+  font-weight: 400; font-size: 50px;
+  margin-bottom: 10px; line-height: 35px;
+}
+.book__info-block .author{
+  font-weight: 300; font-size: 25px;
+  margin-left: 30px; position: relative;
+}
+.book__info-block .author::before{
+  content: '';
+  position: absolute;
+  top: 50%; left: -35px;
+  width: 30px; height: 3px;
+  background: var(--orange);
+}
+.book__info-block .ratting{  margin: 25px 0; font-size: 20px; display: flex; align-items: center; }
+.book__info-block .ratting__count{ margin-left: 50px; font-size: 17px; }
+.book__info-block .ratting__count i{ margin-right: 10px; }
+.book__info-block .description{ margin-bottom: 40px; padding: 0 70px 0 0; font-size: 18px;}
+
+.book__info-block .others-info{ display: flex; align-items: center; margin-bottom: 10px; font-size: 18px;}
+.book__info-block .others-info .heading{ width: 30%;  text-transform: uppercase; font-weight: 400; }
+.book__info-block .others-info .info{  width: 70%; font-weight: 300; }
+.book__info-block .others-info .price{ font-size: 35px; }
+.addToCart{
+  display: inline-block;
+  padding: 15px 30px; margin-top: 20px; font-size: 18px;
+  color: #fff; border-radius: 10px; text-align: center;
+  background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%); 
+}
+
 
 @media (max-width: 768px){ 
     .book__list{ padding: 20px;}
