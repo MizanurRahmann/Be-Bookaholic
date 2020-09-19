@@ -10,7 +10,7 @@ function Book({ id, name, price }) {
 
         //Check book is in basket?
         state.basket.map(book => {
-            if(book.id == id){
+            if(book.id === id){
                 book.amount++;
                 found = true;
             }
@@ -44,7 +44,7 @@ function Book({ id, name, price }) {
                         ? <div className="one" onClick={addToCart}><i className="fas fa-cart-arrow-down"></i></div>
                         : <Link className="one" to='/login' ><i className="fas fa-cart-arrow-down"></i></Link>
                     }
-                    <Link to="/" className="two"><i className="fas fa-book-open"></i></Link>
+                    <div className="two"><i className="fas fa-book-open"></i></div>
                     <div className="three"><i className="far fa-heart"></i></div>
                 </div>
                 <div className="card__detail">
