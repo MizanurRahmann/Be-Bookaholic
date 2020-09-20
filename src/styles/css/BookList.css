@@ -73,7 +73,7 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .book__price{ font-size: 18px; font-weight: 600; color: var(--orange);}
 
 
-/* BOOK DETAILS */
+/* ========= BOOK DETAILS ======= */
 .book__details{ margin-top: 76px; width: 100%; display: flex; flex-wrap: wrap; }
 .book__image-block{ 
   width: 40%; min-height: calc(100vh - 80px);
@@ -159,21 +159,50 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 
 
 @media (max-width: 768px){ 
-    .book__list{ padding: 20px;}
-    .book__category{
-      font-size: 80px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      top: 10px;
-      left: -10px;
-    }
-    .book__category__heading{ margin-bottom: 10px; margin-left: 5px; margin-right: 10px;}
-    .book__category__heading h1{ font-size: 25px; }
-    .book__category__heading p{ font-size: 13px; }
-    .slick-arrow{width: 20px; height: 20px;}
-    .book__carousel{ padding: 0 10px 0 20px; }
-    .card .card__image{ height: 120px !important; }
-    .card__detail{ padding: 5px;}
-    .book__title{ font-size: 12px; margin-bottom: 3px;}
-    .book__price{ font-size: 12px; color: var(--blue-dark);}
+  .book__list{ padding: 20px;}
+  .book__category{
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    top: 10px;
+    left: -10px;
+  }
+  .book__category__heading{ margin-bottom: 10px; margin-left: 5px; margin-right: 10px;}
+  .book__category__heading h1{ font-size: 25px; }
+  .book__category__heading p{ font-size: 13px; }
+  .slick-arrow{width: 20px; height: 20px;}
+  .book__carousel{ padding: 0 10px 0 20px; }
+  .card .card__image{ height: 120px !important; }
+  .card__detail{ padding: 5px;}
+  .book__title{ font-size: 12px; margin-bottom: 3px;}
+  .book__price{ font-size: 12px; color: var(--blue-dark);}
+
+  .book__image-block{  
+    width: 100%; min-height: 40vh; 
+    background: linear-gradient(to top, #fff 0%, #3366FF0F 50%, #fff 100%);
+  }
+  .frame{ height: 30vh; width: 44%; }
+  .page{ height: 30vh; width: 100%; }
+  .page1 { transform: rotateY(-10deg) translateZ(0); }
+  .page2 { transform: rotateY(-20deg) translateZ(0); }
+  .page3 { transform: rotateY(-26deg) translateZ(0); }
+  .cover { transform: rotateY(-32deg); box-shadow: none;}
+
+  .book__info-block{ width: 100%; padding: 25px; text-align: center;}
+  .book__info-block .name{ font-size: 25px; margin-bottom: 10px; line-height: 22px; }
+  .book__info-block .author{ font-size: 18px; margin-left: 0px; }
+  .book__info-block .author::before{ top: 50%; left: 70px; width: 20px; height: 2px; }
+  .book__info-block .ratting{  margin: 10px 0; font-size: 16px; justify-content: center; }
+  .book__info-block .ratting__count{ margin-left: 30px; font-size: 14px; }
+  .book__info-block .ratting__count i{ margin-right: 5px; }
+  .book__info-block .description{ text-align: left; margin-bottom: 10px; padding: 0; font-size: 16px;}
+  .book__info-block .price{  text-align: left; margin-bottom: 15px; font-size: 30px; font-weight: 400;}
+  .book__info-block .price span{ font-size: 15px; padding: 2.5px 5px; border-radius: 5px;}
+  .book__info-block .price strike { font-size: 15px; margin: 0 10px;}
+  .book__info-block .others-info{text-align: left; font-size: 15px; justify-content: space-between;}
+  .book__info-block .others-info .heading{ width: 20%; font-size: 10px;}
+  .book__info-block .others-info .info{  width: 70%;}
+  .addToCart, .addedToCart{ 
+    margin-top: 10px; margin-bottom: 15px; min-width: 100%; font-size: 14px;
+  }
 }

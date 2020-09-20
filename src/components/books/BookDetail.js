@@ -104,8 +104,8 @@ function BookDetail(props) {
                 </div>
                 {
                     !state.basket.find(elemnet => elemnet.id === BOOK_ID)
-                        ? <div className="addToCart" onClick={addToCart}>Add to basket</div>
-                        : <div className="addedToCart">added to basket</div>
+                        ? <div className="addToCart" onClick={addToCart}>Add to Cart</div>
+                        : <div className="addedToCart">added to Cart</div>
                 }
             </div>
         </div>
