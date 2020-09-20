@@ -25,7 +25,6 @@ function Register(props) {
     const register = event => {
         event.preventDefault();
         let Errors = {};
-        dispatch({ type: 'SET_LOADING' });
 
         auth.createUserWithEmailAndPassword(email, password)
             .then(res => {
@@ -36,7 +35,6 @@ function Register(props) {
                             user: { email: res.user.email, name: res.user.displayName }
                         });
                         dispatch({ type: 'SET_AUTHENTICATED' });
-                        dispatch({ type: 'CLEAR_LOADING' });
                     })
                     .then(() => {
                         history.push('/');

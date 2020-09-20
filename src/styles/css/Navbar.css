@@ -1,5 +1,5 @@
 /* ============ NAVBAR =============*/
-.navbar{ padding-left: 70px; padding-right: 70px; padding-bottom: 17px; background: #FFF; }
+.navbar{ padding-left: 70px; padding-right: 70px; padding-bottom: 17px; background: #FFF; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.03);}
 .navbar-brand{ padding: 5px 15px; border: 2px solid #000; border-radius: 5px; font-size: 15px; color: #000;}
 .navbar__navigation-items ul{ list-style: none; margin: 0; padding: 0; display: flex;}
 .navbar__navigation-items{
@@ -56,20 +56,20 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
 .logo__box-user{
   display: flex; align-items: center;
   border: 1px solid #E4E6EB;
-  padding: 2px 15px 2px 2px; border-radius: 40px;
-  margin-right: 8px; cursor: pointer;
+  padding: 0 0 0 15px; border-radius: 40px;
+  cursor: pointer;
   transition: .4s;
 }
 .logo__box-user:hover{background: #E4E6EB;}
-.logo__box-user img, .logo__box-user .icon{ width: 40px; height: 40px; border-radius: 50%; margin-right: 5px; }
+.logo__box-user img, .logo__box-user .icon{ width: 40px; height: 40px; border-radius: 50%; margin-left: 10px; }
 .logo__box-user .icon{ display: flex; align-items: center; justify-content: center; }
 .logo__box-user .text{ font-weight: 500; font-size: 15px; }
-.logo{ 
-  height: 45px; width: 45px; border-radius: 50%;
+.logo, .icon{ 
+  height: 40px; width: 40px; border-radius: 50%;
   background: #E4E6EB; cursor: pointer;
-  position: relative; margin-left: 7px;
+  position: relative; margin-left: 5px;
 }
-.logo i{
+.logo i, .icon i, .logo svg{
   /* color: var(--blue-dark); */
   color: #1A1A1B;
   font-size: 20px;
@@ -126,16 +126,18 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
 }
 
 .dropdown{
-  min-width: 20%; height: auto;
-  background: #fff; padding: 0 25px;
-  position: fixed; top: 80px; right: 10px;
-  border-radius: 0 0 10px 10px; box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  min-width: 20%; min-height: 50vh;
+  background: #f7f7f7; padding: 25px 10px;
+  position: fixed; top: 76px; right: 10px;
+  border-radius: 0 0 10px 10px; box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.03);
   z-index: 100;
 }
 .dropdown ul{ list-style: none; }
-.dropdown ul > li{ padding: 5px 10px; margin-bottom: 5px; border-radius: 7px;}
-.dropdown ul > li a{ font-size: 18px; font-weight: 400; text-decoration: none; color: #444; }
-.dropdown ul > li:hover{ background: #E4E6EB; }
+.dropdown ul > li{ padding: 10px; margin-bottom: 5px; border-radius: 7px;}
+.dropdown ul > li a{ font-size: 16px; font-weight: 300; text-decoration: none; color: #444; }
+.dropdown ul > li a i, .dropdown ul > li a svg{ margin-right: 10px; }
+.dropdown ul > li:hover{ background: #E4E6EB;}
+.dropdown ul > li:hover a{ font-weight: 400;}
 
 /* Media query */
 @media (min-width: 769px){.btn__toggler{ display: none; }}

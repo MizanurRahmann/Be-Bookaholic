@@ -11,12 +11,18 @@ const Nav = props => {
     const [ bdropdown, setBDropdown ] = useState(false);
     const [ pdropdown, setPDropdown ] = useState(false);
 
+    //For signout operation
     const logout = () => {
         auth.signOut().then(() => {
             dispatch({type: 'SET_LOGOUT'});
         })
     }
+    
+    //For dropdown menu
+    const categoryShow = () => { setBDropdown(!bdropdown); setPDropdown(false); }
+    const profileShow = () => { setPDropdown(!pdropdown); setBDropdown(false); }
 
+    
     return (
         <header className="header">
             <nav className="navbar fixed-top">
@@ -31,31 +37,31 @@ const Nav = props => {
                         state.authenticated
                         ? (
                             <div className="logo__box-user">
-                                <div><img src={defaultAvatar} alt="avater" /></div>
-                                <div className="text" onClick={() => setPDropdown(!pdropdown)}>
+                                <div className="text" onClick={profileShow}>
                                     {state.user.name}
                                 </div>
+                                <div><img src={defaultAvatar} alt="avater" /></div>
                                 {/* <div onClick={logout}>Logout</div> */}
                             </div>
                         )
                         : <Link className="sign__in" to='/login'>
                             <div className="logo__box-user">
-                                <div className="icon"><i className="fas fa-plus"></i></div>
                                 <div className="text" to='/login'>Join</div>
+                                <div className="icon"><i className="fas fa-plus"></i></div>
                             </div>
                         </Link>
                     }
                     <Link className="logo" to='/checkout'>
-                        <i className="fas fa-shopping-bag"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         <div>{state.basket.length}</div>
                     </Link>
-                    <div className="logo" onClick={() => setBDropdown(!bdropdown)}>
+                    <div className="logo" onClick={categoryShow}>
                         <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
             </nav>
             {bdropdown ? <BookDropdown /> : null}
-            {pdropdown ? <ProfileDropdown /> : null}
+            {pdropdown ? <ProfileDropdown logout={logout} /> : null}
         </header>
     )
 }
