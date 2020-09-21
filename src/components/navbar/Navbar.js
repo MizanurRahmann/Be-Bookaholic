@@ -4,9 +4,12 @@ import SideDrawer from './SideDrawer';
 import BackDrop from './BackDrop';
 import '../../styles/css/Navbar.css';
 import { BookDropdown, ProfileDropdown } from './Dropdown';
+import { auth } from '../../firebase/util';
+import { useStateValue } from '../Context/StateProvider';
 
 
 function Navbar() {
+    const [states, dispatch] = useStateValue();
     const [state, setstate] = useState(false);
     const [bookList, setBookList] = useState(false);
     const [profileOption, setProfileOption] = useState(false);
@@ -17,6 +20,13 @@ function Navbar() {
     const backDropHandler = () => { setstate(false); }
     const clearOptions = () => { setBookList(false); setProfileOption(false); };
 
+    //For signout operation
+    const logout = () => {
+        auth.signOut().then(() => {
+            dispatch({type: 'SET_LOGOUT'});
+        })
+    }
+
     return (
         <React.Fragment>
             <Nav 
@@ -26,7 +36,7 @@ function Navbar() {
             />
             <SideDrawer show={state}/>
             <BookDropdown show={bookList} />
-            <ProfileDropdown show={profileOption} />
+            <ProfileDropdown show={profileOption} logout={logout}/>
             { state ? <BackDrop click={backDropHandler} dropdown={false} drawer={true}/> : null }
             {
                 bookList || profileOption 
