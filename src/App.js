@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Checkout from './components/checkout/Checkout';
 import BookList from './components/books/BookList';
 import BookDetail from './components/books/BookDetail';
+import BookCategoryView from './components/books/BookCategoryView';
 import Announcement from './components/banner/Announcement';
 import Auth from './components/auth/Auth';
 import { auth } from './firebase/util';
@@ -40,6 +41,7 @@ function App() {
         />
         <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/details/:id' component={BookDetail} />
+        <Route exact path='/view/:category' component={BookCategoryView} />
         <Route exact path='/'>
             <main>
               <Announcement />

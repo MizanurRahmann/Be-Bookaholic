@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import { db } from '../../firebase/util';
+import { Link } from 'react-router-dom';
 import Book from './Book';
-import BooksSkeleton from './BooksSkeleton';
+import BookLoading from './BookLoading';
 import '../../styles/css/BookList.css';
 import settings from '../../styles/js/SliderConfig';
 
@@ -60,13 +61,13 @@ function BookList() {
                 <div className="book__category">Classic</div>
                 <div className="book__category__heading">
                     <h1>Classic</h1>
-                    <p>view all</p>
+                    <Link to="/view/classic">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
-                    <BooksSkeleton /><BooksSkeleton />
-                    <BooksSkeleton /><BooksSkeleton /><BooksSkeleton />
+                    <BookLoading /><BookLoading /><BookLoading />
+                    <BookLoading /><BookLoading />
                 </Slider>}
-                
+
                 {!loading && <Slider {...settings} className="book__carousel">
                     {classicBook.map(cb => (<Book key={cb.id} id={cb.id} name={cb.name} price={cb.price} />))}
                 </Slider>}
@@ -76,28 +77,28 @@ function BookList() {
                 <div className="book__category">Nonfiction</div>
                 <div className="book__category__heading">
                     <h1>Nonfiction</h1>
-                    <p>view all</p>
+                    <Link to="/view/nonfiction">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
-                    <BooksSkeleton /><BooksSkeleton />
-                    <BooksSkeleton /><BooksSkeleton /><BooksSkeleton />
+                    <BookLoading /><BookLoading /><BookLoading />
+                    <BookLoading /><BookLoading />
                 </Slider>}
 
                 {!loading && <Slider {...settings} className="book__carousel">
                     {nonFictionBook.map(nfb => (<Book key={nfb.id} id={nfb.id} name={nfb.name} price={nfb.price} />))}
                 </Slider>}
-                
+
             </div>
 
             <div className="book__list">
                 <div className="book__category">Fiction</div>
                 <div className="book__category__heading">
                     <h1>Fiction</h1>
-                    <p>view all</p>
+                    <Link to="/view/fiction">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
-                    <BooksSkeleton /><BooksSkeleton />
-                    <BooksSkeleton /><BooksSkeleton /><BooksSkeleton />
+                    <BookLoading /><BookLoading /><BookLoading />
+                    <BookLoading /><BookLoading />
                 </Slider>}
 
                 {!loading && <Slider {...settings} className="book__carousel">
@@ -109,11 +110,11 @@ function BookList() {
                 <div className="book__category">Islamik</div>
                 <div className="book__category__heading">
                     <h1>Islamik</h1>
-                    <p>view all</p>
+                    <Link to="/view/islamik">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
-                    <BooksSkeleton /><BooksSkeleton />
-                    <BooksSkeleton /><BooksSkeleton /><BooksSkeleton />
+                    <BookLoading /><BookLoading /><BookLoading />
+                    <BookLoading /><BookLoading />
                 </Slider>}
                 {!loading && <Slider {...settings} className="book__carousel">
                     {islamikBook.map(ib => (<Book key={ib.id} id={ib.id} name={ib.name} price={ib.price} />))}

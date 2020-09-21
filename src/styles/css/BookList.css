@@ -35,22 +35,25 @@
 }
 .slick-arrow.slick-prev{margin-left: 20px !important;}
 .slick-arrow.slick-next{margin-right: 20px !important;}
-.book__carousel{ padding: 0 50px;}
+.book__carousel{ padding: 0 50px; min-height: 45vh;}
 
 
 /* ======= CARD PART ======== */
-.card{ 
-  width: 87%;
-  overflow: hidden;
-  border: none;
+.card{  width: 87%; overflow: hidden; border: none; }
+.card__image img{width: 100%; height: 45vh; background: #f2f2f2;}
+.card__info{text-decoration: none; color: #000; position: relative;}
+a.card__dark{ 
+  height: 45vh; width: 100%;
+  position: absolute; top: -100%; right: 0; 
+  opacity: 0; transition: .2s;
+  background: rgba(0,0,0,0.4); cursor: pointer;
 }
-a.card__info{text-decoration: none; color: #000; position: relative;}
-.card__option{
-  position: absolute; top: 20px; right: -10px;
-  opacity: 0; transition: .4s;
-}
-a.card__info:hover > .card__image{ opacity: 0.5;}
-a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
+.card__option{ position: absolute; top: 20px; right: -10px; opacity: 0; transition: .6s; }
+.card__info:hover > a.card__dark{ top: 0; opacity: 1;}
+.card__info:hover > .card__option{ right: 25px; opacity: 1; }
+.card__option .one, 
+.card__option .two,
+.card__option .three{ box-shadow: 0 5px 5px rgba(0,0,0,0.3); }
 .card__option .one:hover, .two:hover, .three:hover{
   background: var(--orange); color: #fff;
 }
@@ -73,7 +76,7 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .book__price{ font-size: 18px; font-weight: 600; color: var(--orange);}
 
 
-/* ========= BOOK DETAILS ======= */
+/* ========= BOOK DETAILS PART ======= */
 .book__details{ margin-top: 76px; width: 100%; display: flex; flex-wrap: wrap; }
 .book__image-block{ 
   width: 40%; min-height: calc(100vh - 80px);
@@ -94,7 +97,6 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
   background-size: 100%;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.075) 97%, transparent);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
-  /* border: 1px solid red */
 }
 .cover{
   z-index: 2 !important;
@@ -113,7 +115,6 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .frame:hover .page2 { transform: rotateY(-20deg); box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.2);}
 .frame:hover .page1 { transform: rotateY(-10deg); box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.2);}
 .frame:hover .cover { transform: rotateY(-32deg); box-shadow: none;}
-
 
 .book__info-block{ width: 60%; padding: 30px 10px; }
 .book__info-block .name{
@@ -157,6 +158,8 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
 .addedToCart{ background: #ccc; color: #444; font-size: 15px; }
 .addToCart:hover{ background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%); }
 
+/* ========= BOOK CATEGOROY WISE VIEW PART ======= */
+
 
 @media (max-width: 768px){ 
   .book__list{ padding: 20px;}
@@ -171,8 +174,9 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
   .book__category__heading h1{ font-size: 25px; }
   .book__category__heading p{ font-size: 13px; }
   .slick-arrow{width: 20px; height: 20px;}
-  .book__carousel{ padding: 0 10px 0 20px; }
+  .book__carousel{ padding: 0 10px 0 20px; min-height: 150px;}
   .card .card__image{ height: 120px !important; }
+  .card__image img{width: 100%; height: 120px;}
   .card__detail{ padding: 5px;}
   .book__title{ font-size: 12px; margin-bottom: 3px;}
   .book__price{ font-size: 12px; color: var(--blue-dark);}
@@ -191,7 +195,7 @@ a.card__info:hover > .card__option{ right: 25px; opacity: 1; }
   .book__info-block{ width: 100%; padding: 25px; text-align: center;}
   .book__info-block .name{ font-size: 25px; margin-bottom: 10px; line-height: 22px; }
   .book__info-block .author{ font-size: 18px; margin-left: 0px; }
-  .book__info-block .author::before{ top: 50%; left: 70px; width: 20px; height: 2px; }
+  .book__info-block .author::before{ width: 0; height: 0; }
   .book__info-block .ratting{  margin: 10px 0; font-size: 16px; justify-content: center; }
   .book__info-block .ratting__count{ margin-left: 30px; font-size: 14px; }
   .book__info-block .ratting__count i{ margin-right: 5px; }
