@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useStateValue } from '../Context/StateProvider';
-import defaultAvatar from '../../styles/images/avatar.svg';
 
 const SideDrawer = props => {
-    const [state, dispatch] = useStateValue();
 
     let drawerClass = 'side__drawer';
     if(props.show){
