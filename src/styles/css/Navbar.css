@@ -66,31 +66,26 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
 .logo__box-user .text{ font-weight: 500; font-size: 15px; }
 .logo, .icon{ 
   height: 40px; width: 40px; border-radius: 50%;
-  background: #E4E6EB; cursor: pointer;
-  position: relative; margin-left: 5px;
+  background: #f2f2f2; cursor: pointer;
+  position: relative; margin-left: 8px;
 }
+.logo:hover, .icon:hover{ background: #E4E6EB; }
 .logo i, .icon i, .logo svg{
-  /* color: var(--blue-dark); */
   color: #1A1A1B;
   font-size: 20px;
   position: absolute; top: 50%; left: 50%; 
   transform: translate(-50%, -50%); 
 }
 .logo div{
-  height: 20px;
-  width: 20px;
+  height: 20px; width: 20px;
   border-radius: 50%;
-  background-color: var(--blue);
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  position: absolute;
-  top: 70%;
-  left: 60%;
+  background-color: var(--blue); color: #fff;
+  font-size: 12px; font-weight: bold;
+  position: absolute; top: 70%; left: 60%;
   display: flex; align-items: center; justify-content: center;
 }
 
-/* SIDE DRAWER */
+/* ============== SIDE DRAWER ============= */
 .side__drawer{
   height: 100%;
   width: 50%;
@@ -115,23 +110,24 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
 }
 .side__drawer li{ margin: 0.2rem 0; }
 .side__drawer a{ color: #333; text-decoration: none; font-size: 1.2rem; }
-.backDrop{
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 100;
+.backdrop{
+  height: 100%; width: 100%;
+  position: fixed; top: 0; left: 0;
+  background: rgba(0, 0, 0, 0.3); z-index: 100;
 }
+.backdrop-white{ background: transparent; }
 
+/* ========== DROPDOWN =========== */
 .dropdown{
-  min-width: 20%; min-height: 50vh;
+  min-width: 20%; height: auto;
   background: #f7f7f7; padding: 25px 10px;
-  position: fixed; top: 76px; right: 10px;
-  border-radius: 0 0 10px 10px; box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.03);
-  z-index: 100;
+  position: fixed; top: 80px; right: 10px;
+  border: 5px solid #fff;
+  border-radius: 0 0 10px 10px; box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+  z-index: 150; transition: .5s; transform: translateY(-110%);
 }
+.dropdown.open{ transform: translateY(0); }
+
 .dropdown ul{ list-style: none; }
 .dropdown ul > li{ padding: 10px; margin-bottom: 5px; border-radius: 7px;}
 .dropdown ul > li a{ font-size: 16px; font-weight: 300; text-decoration: none; color: #444; }

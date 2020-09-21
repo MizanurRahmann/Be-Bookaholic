@@ -36,12 +36,9 @@ const Nav = props => {
                     {
                         state.authenticated
                         ? (
-                            <div className="logo__box-user">
-                                <div className="text" onClick={profileShow}>
-                                    {state.user.name}
-                                </div>
+                            <div className="logo__box-user" onClick={props.toogleProfileOption}>
+                                <div className="text">{state.user.name}</div>
                                 <div><img src={defaultAvatar} alt="avater" /></div>
-                                {/* <div onClick={logout}>Logout</div> */}
                             </div>
                         )
                         : <Link className="sign__in" to='/login'>
@@ -55,12 +52,12 @@ const Nav = props => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         <div>{state.basket.length}</div>
                     </Link>
-                    <div className="logo" onClick={categoryShow}>
+                    <div className="logo" onClick={props.toggleBookListOption}>
                         <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
             </nav>
-            {bdropdown ? <BookDropdown /> : null}
+            {bdropdown ? <BookDropdown classLists={"dropdown-up"} /> : null}
             {pdropdown ? <ProfileDropdown logout={logout} /> : null}
         </header>
     )
