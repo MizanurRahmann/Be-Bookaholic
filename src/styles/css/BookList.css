@@ -158,7 +158,18 @@ a.card__dark{
 .addedToCart{ background: #ccc; color: #444; font-size: 15px; }
 .addToCart:hover{ background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%); }
 
+
 /* ========= BOOK CATEGOROY WISE VIEW PART ======= */
+.categoryView{
+  display: flex; flex-wrap: wrap;
+  padding: 20px 70px;
+}
+.categoryView .individualBooks{
+  width: 20%; min-height: 30vh;
+  margin-bottom: 20px;
+  display: flex; justify-content: center;
+}
+.categoryView .individualBooks .card{ width: 80%; overflow: hidden; border: none; }
 
 
 @media (max-width: 768px){ 

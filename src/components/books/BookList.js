@@ -61,7 +61,7 @@ function BookList() {
                 <div className="book__category">Classic</div>
                 <div className="book__category__heading">
                     <h1>Classic</h1>
-                    <Link to="/view/classic">view all</Link>
+                    <Link to="/view/Classic">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
                     <BookLoading /><BookLoading /><BookLoading />
@@ -77,7 +77,7 @@ function BookList() {
                 <div className="book__category">Nonfiction</div>
                 <div className="book__category__heading">
                     <h1>Nonfiction</h1>
-                    <Link to="/view/nonfiction">view all</Link>
+                    <Link to="/view/Nonfiction">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
                     <BookLoading /><BookLoading /><BookLoading />
@@ -94,7 +94,7 @@ function BookList() {
                 <div className="book__category">Fiction</div>
                 <div className="book__category__heading">
                     <h1>Fiction</h1>
-                    <Link to="/view/fiction">view all</Link>
+                    <Link to="/view/Fiction">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
                     <BookLoading /><BookLoading /><BookLoading />
@@ -110,7 +110,7 @@ function BookList() {
                 <div className="book__category">Islamik</div>
                 <div className="book__category__heading">
                     <h1>Islamik</h1>
-                    <Link to="/view/islamik">view all</Link>
+                    <Link to="/view/Islamik">view all</Link>
                 </div>
                 {loading && <Slider {...settings} className="book__carousel">
                     <BookLoading /><BookLoading /><BookLoading />
