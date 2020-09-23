@@ -10,6 +10,7 @@ import Announcement from './components/banner/Announcement';
 import Auth from './components/auth/Auth';
 import { auth } from './firebase/util';
 import { useStateValue } from './components/Context/StateProvider';
+import Profile from './components/profile/Profile';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -21,7 +22,7 @@ function App() {
       if(userAuth){
         dispatch({
           type: 'CREATE_USER',
-          user: { email: userAuth.email, name: userAuth.displayName },
+          user: { id: userAuth.uid ,email: userAuth.email, name: userAuth.displayName },
         });
         dispatch({ type: 'SET_AUTHENTICATED' });
       } else{
@@ -38,6 +39,10 @@ function App() {
         <Route 
           exact path='/login' 
           render={() => (state.authenticated ? <Redirect to='/' /> : <Auth />)} 
+        />
+        <Route 
+          exact path='/profile' 
+          render={() => (!state.authenticated ? <Auth/> : <Profile />)} 
         />
         <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/details/:id' component={BookDetail} />
