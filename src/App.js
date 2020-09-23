@@ -35,7 +35,7 @@ function App() {
               }
               //if user prfile doesn't exist createa doc with empty value
               else {
-                db.collection("Users").doc(state.user.id).set({
+                db.collection("Users").doc(userAuth.uid).set({
                   District: "",
                   Division: "",
                   Phone: "",

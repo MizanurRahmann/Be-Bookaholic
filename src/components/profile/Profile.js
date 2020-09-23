@@ -10,11 +10,11 @@ function Profile() {
     const [state, dispatch] = useStateValue();
 
     const [Name, setName] = useState(state.user.name);
-    const [District, setDistrict] = useState(state.userAddress.District);
-    const [Division, setDivision] = useState(state.userAddress.Division);
-    const [Thana, setThana] = useState(state.userAddress.Thana);
-    const [Village, setVillage] = useState(state.userAddress.Village);
-    const [Phone, setPhone] = useState(state.userAddress.Phone);
+    const [District, setDistrict] = useState(state.userAddress.District || '');
+    const [Division, setDivision] = useState(state.userAddress.Division || '');
+    const [Thana, setThana] = useState(state.userAddress.Thana || '');
+    const [Village, setVillage] = useState(state.userAddress.Village || '');
+    const [Phone, setPhone] = useState(state.userAddress.Phone || '');
     
     
     const updateProfile = event => {
