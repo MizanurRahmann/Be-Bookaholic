@@ -1,7 +1,9 @@
 export const initialState = {
     basket: [],
+    wishlist: [],
     total: 0,
-    user: { name: '' },
+    user: {},
+    userAddress: {Village: '', Thana: '', District: '', Division: '', Phone: '+880', Wishlist: []},
     authenticated: false,
     loading: false
 }
@@ -35,6 +37,11 @@ function reducer(state, action) {
                 ...state,
                 user: action.user
             };
+        case 'SET_USER_PROFILE':
+            return{
+                ...state,
+                userAddress: action.address
+            }
         case 'SET_AUTHENTICATED':
             return {
                 ...state,

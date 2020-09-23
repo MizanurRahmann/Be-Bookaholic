@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Checkout from './components/checkout/Checkout';
 import BookList from './components/books/BookList';
@@ -8,25 +8,50 @@ import BookDetail from './components/books/BookDetail';
 import BookCategoryView from './components/books/BookCategoryView';
 import Announcement from './components/banner/Announcement';
 import Auth from './components/auth/Auth';
-import { auth } from './firebase/util';
+import { auth, db } from './firebase/util';
 import { useStateValue } from './components/Context/StateProvider';
 import Profile from './components/profile/Profile';
 
 function App() {
   const [state, dispatch] = useStateValue();
-  
+
 
   //if user loged in
   useEffect(() => {
     auth.onAuthStateChanged(userAuth => {
-      if(userAuth){
+      if (userAuth) {
         dispatch({
           type: 'CREATE_USER',
-          user: { id: userAuth.uid ,email: userAuth.email, name: userAuth.displayName },
+          user: { id: userAuth.uid, email: userAuth.email, name: userAuth.displayName },
         });
+
         dispatch({ type: 'SET_AUTHENTICATED' });
-      } else{
-        dispatch({type: 'SET_LOGOUT'})
+        
+        db.collection('Users').doc(userAuth.uid).get()
+          .then(doc => {
+              //if user profile exist set profile
+              if (doc.exists) {
+                dispatch({ type: 'SET_USER_PROFILE', address: doc.data() })
+              }
+              //if user prfile doesn't exist createa doc with empty value
+              else {
+                db.collection("Users").doc(state.user.id).set({
+                  District: "",
+                  Division: "",
+                  Phone: "",
+                  Thana: "",
+                  Village: "",
+                  Wishlist: [],
+                  basket: []
+                })
+                  .then(() => { console.log("Document successfully written!"); })
+                  .catch(error => { console.error("Error writing document: ", error); });
+              }
+          })
+          .catch(error => { console.error("Error writing document: ", error); })
+
+      } else {
+        dispatch({ type: 'SET_LOGOUT' })
       }
     })
   }, []);
@@ -36,23 +61,23 @@ function App() {
     <div style={{ height: "100%" }}>
       <Router>
         <Navbar />
-        <Route 
-          exact path='/login' 
-          render={() => (state.authenticated ? <Redirect to='/' /> : <Auth />)} 
+        <Route
+          exact path='/login'
+          render={() => (state.authenticated ? <Redirect to='/' /> : <Auth />)}
         />
-        <Route 
-          exact path='/profile' 
-          render={() => (!state.authenticated ? <Auth/> : <Profile />)} 
+        <Route
+          exact path='/profile'
+          render={() => (!state.authenticated ? <Auth /> : <Profile />)}
         />
         <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/details/:id' component={BookDetail} />
         <Route exact path='/view/:category' component={BookCategoryView} />
         <Route exact path='/'>
-            <main>
-              <Announcement />
-              <BookList />
-            </main>
-          </Route>
+          <main>
+            <Announcement />
+            <BookList />
+          </main>
+        </Route>
       </Router>
     </div>
   );
