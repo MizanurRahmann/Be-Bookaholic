@@ -25,6 +25,8 @@ function Navbar() {
         auth.signOut().then(() => {
             dispatch({type: 'SET_LOGOUT'});
         })
+        //close draer
+        clearOptions();
     }
 
     return (
@@ -35,8 +37,8 @@ function Navbar() {
                 toogleProfileOption={toogleProfileOption}
             />
             <SideDrawer show={state}/>
-            <BookDropdown show={bookList} />
-            <ProfileDropdown show={profileOption} logout={logout}/>
+            <BookDropdown show={bookList} clear={clearOptions}/>
+            <ProfileDropdown show={profileOption} logout={logout} clear={clearOptions}/>
             { state ? <BackDrop click={backDropHandler} dropdown={false} drawer={true}/> : null }
             {
                 bookList || profileOption 
