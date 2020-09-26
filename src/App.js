@@ -22,7 +22,12 @@ function App() {
       if (userAuth) {
         dispatch({
           type: 'CREATE_USER',
-          user: { id: userAuth.uid, email: userAuth.email, name: userAuth.displayName },
+          user: { 
+            id: userAuth.uid,
+            email: userAuth.email, 
+            name: userAuth.displayName,
+            imageURL: userAuth.photoURL
+          },
         });
 
         dispatch({ type: 'SET_AUTHENTICATED' });
@@ -56,7 +61,7 @@ function App() {
     })
   }, []);
 
-
+  
   return (
     <div style={{ height: "100%" }}>
       <Router>

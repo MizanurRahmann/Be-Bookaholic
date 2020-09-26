@@ -5,17 +5,17 @@ import '../../styles/css/Profile.css';
 import defaultAvatar from '../../styles/images/avatar.svg';
 
 function Profile() {
+    const [state, dispatch] = useStateValue();
     const [editMode, setEditMode] = useState(false);
     const [loading, setLoading] = useState(false)
-    const [state, dispatch] = useStateValue();
 
-    const [Name, setName] = useState(state.user.name);
-    const [District, setDistrict] = useState(state.userAddress.District || '');
-    const [Division, setDivision] = useState(state.userAddress.Division || '');
-    const [Thana, setThana] = useState(state.userAddress.Thana || '');
-    const [Village, setVillage] = useState(state.userAddress.Village || '');
-    const [Phone, setPhone] = useState(state.userAddress.Phone || '');
-    
+    const [Name, setName] = useState(auth.currentUser.displayName);
+    const [ImageUrl, setImageUrl] = useState(auth.currentUser.photoURL);
+    const [Village, setVillage] = useState('');
+    const [Thana, setThana] = useState('');
+    const [District, setDistrict] = useState('');
+    const [Division, setDivision] = useState('');
+    const [Phone, setPhone] = useState('');
     
     const updateProfile = event => {
         event.preventDefault();
@@ -30,16 +30,32 @@ function Profile() {
                 Village: Village,
             }
         })
-        console.log(state.userAddress);
+        //update user info(in context API)
+        dispatch({
+            type: 'CREATE_USER',
+            user: { 
+                name: Name,
+                imageURL: ImageUrl
+              }
+        })
+
+        //update user inf(in firebase)
+        auth.currentUser.updateProfile({
+            displayName: Name,
+            photoURL: ImageUrl
+        }).then(() => {
+            console.log("Update sccesfull");
+        }).catch(error => {
+            console.log("Error: ", error.message);
+        })
+        
         //setup user profile(in database)
-        db.collection("Users").doc(state.user.id).set({
+        db.collection("Users").doc(auth.currentUser.uid).set({
             District: District,
             Division: Division,
             Phone: Phone,
             Thana: Thana,
             Village: Village,
-            Wishlist: state.wishlist,
-            Basket: state.basket
         })
         .then(() => { console.log("Document successfully written!") })
         .catch(error => { console.error("Error writing document: ", error); });
@@ -47,8 +63,27 @@ function Profile() {
         setEditMode(false)
     }
 
+    
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            db.collection('Users').doc(auth.currentUser.uid).get()
+            .then(doc => {
+                dispatch({ type: 'SET_USER_PROFILE', address: doc.data() });
+                setDistrict(doc.data().District);
+                setDivision(doc.data().Division);
+                setPhone(doc.data().Phone);
+                setThana(doc.data().Thana);
+                setVillage(doc.data().Village);
+                setLoading(false);
+            })
+            .catch(error => { console.error("Error writing document: ", error); })
+        }, 1500);
+    }, [])
 
-
+    
+     if(loading)
+        return <div>Loading</div>
     return (
         <div className="userProfile">
             <div className="userProfile__user">
@@ -80,7 +115,7 @@ function Profile() {
                         }
                         <div className="profile__info">
                             <label>Email</label><br />
-                            <div className="profile__info-field">{state.user.email}</div>
+                            <div className="profile__info-field">{auth.currentUser.email}</div>
                         </div>
                     </div>
                     <div className="profile__info-block">
