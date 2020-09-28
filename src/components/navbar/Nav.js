@@ -3,6 +3,7 @@ import DrawerTogglerButton from './DrawerTogglerButton'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../Context/StateProvider';
 import defaultAvatar from '../../styles/images/avatar.svg';
+import { auth } from '../../firebase/util';
 
 const Nav = props => {
     const [state, dispatch] = useStateValue();
@@ -24,7 +25,11 @@ const Nav = props => {
                         ? (
                             <div className="logo__box-user" onClick={props.toogleProfileOption}>
                                 <div className="text">{state.user.name}</div>
-                                <div><img src={defaultAvatar} alt="avater" /></div>
+                                {
+                                    auth.currentUser.photoURL 
+                                    ?<div><img src={state.user.imageURL} alt="avater" /></div>
+                                    :<div><img src={defaultAvatar} alt="avater" /></div>
+                                }
                             </div>
                         )
                         : <Link to='/login'>
@@ -43,7 +48,6 @@ const Nav = props => {
                     <div className="logo books" onClick={props.toggleBookListOption}>
                         <i class="fas fa-caret-down"></i>
                     </div>
-
                 </div>
             </nav>
         </header>

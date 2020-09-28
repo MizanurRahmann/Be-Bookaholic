@@ -33,25 +33,6 @@ function Profile() {
     
     const updateProfile = event => {
         event.preventDefault();
-        //setup user profile(in context API)
-        dispatch({
-            type: 'SET_USER_PROFILE',
-            address: {
-                District: District,
-                Division: Division,
-                Phone: Phone,
-                Thana: Thana,
-                Village: Village,
-            }
-        })
-        //update user info(in context API)
-        dispatch({
-            type: 'CREATE_USER',
-            user: { 
-                name: Name,
-                imageURL: ImageUrl
-              }
-        })
 
         //update user inf(in firebase)
         auth.currentUser.updateProfile({
@@ -61,7 +42,7 @@ function Profile() {
         }).catch(error => {
             console.log("Error: ", error.message);
         })
-        //Save to storage and save link in downloadUrl variable
+        //Save profile pic ture to the storage after save it in context API
         if(preview){
             const uploadRef = storage.ref(`ProfilePictures/${auth.currentUser.uid}`);
             const task = uploadRef.put(ImageUrl);
@@ -79,9 +60,32 @@ function Profile() {
                             }).then(() => {
                                 console.log("Profile-Update sccesfull");
                             })
+
+                            dispatch({type: 'CREATE_USER', user: { imageURL: preview}})
                         })
             })
         }
+
+        //update user info(in context API)
+        dispatch({
+            type: 'CREATE_USER',
+            user: { 
+                name: Name,
+                imageURL: preview
+              }
+        })
+
+        //setup user profile(in context API)
+        dispatch({
+            type: 'SET_USER_PROFILE',
+            address: {
+                District: District,
+                Division: Division,
+                Phone: Phone,
+                Thana: Thana,
+                Village: Village,
+            }
+        })
         
         //setup user profile(in database)
         db.collection("Users").doc(auth.currentUser.uid).set({
@@ -96,7 +100,6 @@ function Profile() {
         
         setEditMode(false)
     }
-
     
     useEffect(() => {
         setLoading(true);
@@ -132,10 +135,14 @@ function Profile() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                         Edit
                     </div>
-                    <div className="update-image" onClick={selectProfileImage}>
-                        <input type="file" hidden="hidden" onChange={previewImage}/>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                    </div>
+                    {
+                        editMode
+                            ? <div className="update-image" onClick={selectProfileImage}>
+                                <input type="file" hidden="hidden" onChange={previewImage}/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                            </div>
+                            : null
+                    }
                 </div>
             </div>
             <div className="userProfile__profile">

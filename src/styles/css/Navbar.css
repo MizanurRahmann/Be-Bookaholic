@@ -51,7 +51,11 @@ a.sign__in{align-self: center; color: #000; text-decoration: none; margin-right:
   cursor: pointer; transition: .4s;
 }
 .logo__box-user:hover{background: #E4E6EB;}
-.logo__box-user img, .logo__box-user .icon{ width: 40px; height: 40px; border-radius: 50%; margin-left: 10px; }
+.logo__box-user img, .logo__box-user .icon{ 
+  width: 40px; height: 40px;
+  border: 1.5px solid #ccc;
+  border-radius: 50%; margin-left: 10px; 
+}
 .logo__box-user .icon{ display: flex; align-items: center; justify-content: center; }
 .logo__box-user .text{ font-weight: 500; font-size: 15px; }
 .logo, .icon{ 
