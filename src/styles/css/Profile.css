@@ -36,8 +36,19 @@
     font-size: 18px; cursor: pointer;
     color: var(--blue-dark);
 }
+.update-image{
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    position: absolute; left: 50%; top: -100px;
+    transform: translateX(-50%);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; transition: .5s;
+}
+.update-image svg{ width: 50px; height: 50px; color: #fff;}
 .user__image .edit:hover{ color: #fff; background: var(--blue-dark); }
 .user__image .edit svg{ width: 18px; height: 18px; margin-right: 5px; }
+.update-image:hover{ opacity: 1; background: rgba(0,0,0,0.6); }
+
 
 /* ============== PROFILE INFO ============= */
 .userProfile .userProfile__profile{ width: 70%; padding: 20px 20px 20px 60px;}

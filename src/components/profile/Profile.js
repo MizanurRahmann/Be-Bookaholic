@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Children } from 'react';
 import { useStateValue } from '../Context/StateProvider';
-import { auth, db } from '../../firebase/util';
+import { auth, db, storage } from '../../firebase/util';
 import '../../styles/css/Profile.css';
 import defaultAvatar from '../../styles/images/avatar.svg';
 
@@ -10,12 +10,26 @@ function Profile() {
     const [loading, setLoading] = useState(false)
 
     const [Name, setName] = useState(auth.currentUser.displayName);
+    const [preview, setPreview] = useState(auth.currentUser.photoURL);
     const [ImageUrl, setImageUrl] = useState(auth.currentUser.photoURL);
+    
     const [Village, setVillage] = useState('');
     const [Thana, setThana] = useState('');
     const [District, setDistrict] = useState('');
     const [Division, setDivision] = useState('');
     const [Phone, setPhone] = useState('');
+
+    const selectProfileImage = event => { event.target.parentNode.firstChild.click(); }
+    const previewImage = event => {
+        const reader = new FileReader();
+        //preview in UI
+        reader.onload = () => {
+            if(reader.readyState === 2)
+                setPreview(reader.result);
+        }
+        reader.readAsDataURL(event.target.files[0]);
+        setImageUrl(event.target.files[0])
+    }
     
     const updateProfile = event => {
         event.preventDefault();
@@ -42,12 +56,32 @@ function Profile() {
         //update user inf(in firebase)
         auth.currentUser.updateProfile({
             displayName: Name,
-            photoURL: ImageUrl
         }).then(() => {
-            console.log("Update sccesfull");
+            console.log("Name-Update sccesfull");
         }).catch(error => {
             console.log("Error: ", error.message);
         })
+        //Save to storage and save link in downloadUrl variable
+        if(preview){
+            const uploadRef = storage.ref(`ProfilePictures/${auth.currentUser.uid}`);
+            const task = uploadRef.put(ImageUrl);
+            task.on(
+                'state_changed',
+                snapshot => {},
+                error => {
+                    console.log(error);
+                },
+                () => {
+                    storage.ref(`ProfilePictures`).child(auth.currentUser.uid).getDownloadURL()
+                        .then( url => {
+                            auth.currentUser.updateProfile({
+                                photoURL: url
+                            }).then(() => {
+                                console.log("Profile-Update sccesfull");
+                            })
+                        })
+            })
+        }
         
         //setup user profile(in database)
         db.collection("Users").doc(auth.currentUser.uid).set({
@@ -88,11 +122,19 @@ function Profile() {
         <div className="userProfile">
             <div className="userProfile__user">
                 <div className="user__image">
-                    <img src={defaultAvatar} alt="user avatar" />
+                    {
+                        preview
+                        ? <img src={preview} alt="user avatar"/>
+                        : <img src={defaultAvatar} alt="user avatar"/>
+                    }
                     <div className="user__name"><h1>{state.user.name}</h1></div>
                     <div className="edit" onClick={() => setEditMode(!editMode)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                         Edit
+                    </div>
+                    <div className="update-image" onClick={selectProfileImage}>
+                        <input type="file" hidden="hidden" onChange={previewImage}/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                     </div>
                 </div>
             </div>
