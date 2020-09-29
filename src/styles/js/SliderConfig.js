@@ -14,7 +14,7 @@ const settings = {
             arrows: false,
             swipeToSlide: true,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             initialSlide: 2
           }
         }
