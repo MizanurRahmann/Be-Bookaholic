@@ -59,7 +59,7 @@
 }
 /* profile info */
 .userProfile .userProfile__profile form{ margin-top: 40px; width: 100%; }
-.profile__info-block{ display: flex; margin-bottom: 25px;}
+.profile__info-block{ display: flex; flex-wrap: wrap; margin-bottom: 25px;}
 .profile__info{ width: 35%; margin-right: 30px; }
 .profile__info label{font-size: 15px; font-weight: 400; margin-bottom: -5px; text-transform: uppercase;}
 .profile__info-field{
@@ -76,4 +76,45 @@ button.update__btn{
     padding: 8px 16px; border-radius: 8px;
     background: linear-gradient(-45deg, var(--blue-dark), var(--blue));
     color: #fff; font-size: 18px;
+}
+
+@media (max-width: 768px){ 
+    .userProfile{margin-top: 130px; padding: 0 30px; }
+    .userProfile .userProfile__user{width: 100%; height: 20vh}
+    .userProfile .userProfile__user .user__image{ height: 20vh; background: transparent; box-shadow: none;}
+    .userProfile .userProfile__user .user__image img{ width: 150px; height: 150px; padding: 5px; top: -50px; }
+    .userProfile .userProfile__user .user__name{top: 90px;}
+    .userProfile .userProfile__user .user__name h1{ font-size: 25px; }
+    .user__image .edit{
+        width: 40px; height: 40px; border-radius: 50%;
+        display: flex; justify-content: center; align-items: center; padding: 0;
+        bottom: 30%; right: calc(50% - 70px);
+        background: var(--blue);
+        font-size: 16px; color: #fff;
+        z-index: 1;
+    }
+    .user__image .edit span{ display: none; }
+    .update-image{
+        width: 130px; height: 130px; top: -40px;
+        cursor: pointer; opacity: 1; background: rgba(0,0,0,0.6);
+    }
+    .userProfile .userProfile__profile{ width: 100%; padding: 0;}
+    .userProfile .userProfile__profile h1{ display: none; }
+    .userProfile .userProfile__profile form{ margin-top: 20px;}
+    .profile__info-block{ margin-bottom: 20px; width: 100%;}
+    .profile__info{ width: 100%; margin-bottom: 2px; margin-right: 0;}
+    .profile__info label{font-size: 10px; margin-bottom: -5px;}
+    .profile__info-field{
+        width: 100%; min-height: 30px;
+        padding: 5px; font-size: 15px;
+    }
+    .profile__info.phone{ width: 100%; }
+    input.profile__info-field{
+        border: 2.5px solid var(--blue-dark);
+    }
+    button.update__btn{
+        padding: 8px 16px; border-radius: 8px;
+        background: linear-gradient(-45deg, var(--blue-dark), var(--blue));
+        color: #fff; font-size: 18px;
+    }
 }

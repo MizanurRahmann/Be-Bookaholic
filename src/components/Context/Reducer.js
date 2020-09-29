@@ -3,7 +3,7 @@ export const initialState = {
     wishlist: [],
     total: 0,
     user: {},
-    userAddress: {Village: '', Thana: '', District: '', Division: '', Phone: '+880', Wishlist: []},
+    userAddress: {Village: '', Thana: '', District: '', Division: '', Phone: '+880'},
     authenticated: false,
     loading: false
 }
@@ -25,6 +25,20 @@ function reducer(state, action) {
                 return {
                     ...state,
                     basket: [...state.basket, {...action.item, amount: 1}]
+                };
+            }
+        case 'ADD_TO_WISHLIST':
+            let exist = false;
+            //Check book is in ishlist?
+            state.wishlist.map(item => {
+                if (item.id === action.item.id)
+                    exist = true;
+            })
+            //If it is not found the add to wishlist
+            if (!exist){
+                return {
+                    ...state,
+                    wishlist: [...state.wishlist, action.item]
                 };
             }
         case 'REMOVE_FROM_BASKET':

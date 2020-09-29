@@ -16,6 +16,17 @@ function Book({ id, name, price }) {
         })
     }
 
+    const addToWishList = () => {
+        dispatch({
+            type: 'ADD_TO_WISHLIST',
+            item: {
+                id: id,
+                name: name,
+                price: price
+            }
+        })
+    }
+
 
     const imageUrl = `https://firebasestorage.googleapis.com/v0/b/br-bookaholic.appspot.com/o/BookImages%2F${id}.jpg?alt=media&token=6316abd8-eee5-4e16-a446-9c9ad9a2316d`;
     return (
@@ -38,7 +49,7 @@ function Book({ id, name, price }) {
                     <Link to={"/details/" + id} className="two">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     </Link>
-                    <div className="three">
+                    <div className="three" onClick={addToWishList}>
                         <i className="far fa-heart"></i>
                     </div>
                 </div>

@@ -36,7 +36,7 @@ function App() {
           .then(doc => {
               //if user profile exist set profile
               if (doc.exists) {
-                dispatch({ type: 'SET_USER_PROFILE', address: doc.data() })
+                dispatch({ type: 'SET_USER_PROFILE', address: doc.data() });
               }
               //if user prfile doesn't exist createa doc with empty value
               else {
@@ -47,7 +47,7 @@ function App() {
                   Thana: "",
                   Village: "",
                   Wishlist: [],
-                  basket: []
+                  Basket: []
                 })
                   .then(() => { console.log("Document successfully written!"); })
                   .catch(error => { console.error("Error writing document: ", error); });
