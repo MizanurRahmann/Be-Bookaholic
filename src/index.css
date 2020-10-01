@@ -29,57 +29,29 @@ main{ margin-top: 135px; }
 
 /* ============== LOADING ============= */
 .loading{ width: 95%; height: 45vh; background: #f2f2f2; display: flex; align-items: center; justify-content: center; }
-.loading-box{ width: 80px; height: 80px; overflow: hidden; position: relative;}
-.loading-box .lb{
-  border-radius: 50%;
-  border-left: 4px solid;
-  border-right: 4px solid;
-  border-top: 4px solid transparent !important;
-  border-bottom: 4px solid transparent !important;
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-}
-.loading-box .lb1{
-  width: 60px; height: 60px;
-  border-color: var(--blue-dark);
-  animation: rotation 2s infinite;
-}
-.loading-box .lb2{
-  width: 50px; height: 50px;
-  border-color: var(--blue);
-  animation: rotation 2s infinite;
-  animation-delay: .2s;
-}
-.loading-box .lb3{
-  width: 40px; height: 40px;
-  border-color: var(--blue-light);
-  animation: rotation 2s infinite;
-  animation-delay: .4s;
-}
-.loading-box .lb4{
-  width: 30px; height: 30px;
-  border-color: var(--blue-dark);
-  animation: rotation 2s infinite;
-  animation-delay: .5s;
+.pulse{
+	border-radius: 50%;
+	width: 80px; height: 80px;
+	background: var(--blue-ultra-light);
 }
 
-@keyframes rotation{
-  0%{ transform: translate(-50%, -50%) rotate(0deg); }
-  50%{ transform: translate(-50%, -50%) rotate(-180deg); }
-  100%{ transform: translate(-50%, -50%) rotate(0deg); }
+.pulse::after{
+	content: '';
+	position: absolute;
+  width: 85px; height: 85px;
+  border-radius: 50%;
+	z-index: 1;
+	background: var(--blue-light);
+	animation: pulse 1s ease infinite
+}
+
+@keyframes pulse{
+	from { transform: scale(1); opacity: 1 }
+	to { transform: scale(2); opacity: 0 }
 }
 
 @media (max-width: 768px){
   .loading{ width: 95%; height: 120px;}
-  .loading-box{ width: 50px; height: 50px;}
-  .loading-box .lb{
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-top: 2px solid transparent !important;
-    border-bottom: 2px solid transparent !important;
-  }
-  .loading-box .lb1{ width: 40px; border-color: var(--blue-dark); height: 40px;}
-  .loading-box .lb2{width: 30px; border-color: var(--blue); height: 30px;}
-  .loading-box .lb3{ width: 20px; border-color: var(--blue-light); height: 20px;}
-  .loading-box .lb4{ width: 10px; border-color: var(--blue-dark); height: 10px;}
+  .pulse{ width: 30px; height: 30px;}
+  .pulse::after{ width: 35px; height: 35px;}
 }
