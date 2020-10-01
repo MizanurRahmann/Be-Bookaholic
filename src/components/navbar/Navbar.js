@@ -36,7 +36,7 @@ function Navbar() {
                 toggleBookListOption={toggleBookListOption}
                 toogleProfileOption={toogleProfileOption}
             />
-            <SideDrawer show={state}/>
+            <SideDrawer show={state} clear={drawerToggleClickHnadler}/>
             <BookDropdown show={bookList} clear={clearOptions}/>
             <ProfileDropdown show={profileOption} logout={logout} clear={clearOptions}/>
             { state ? <BackDrop click={backDropHandler} dropdown={false} drawer={true}/> : null }
