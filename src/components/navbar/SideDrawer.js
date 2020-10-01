@@ -10,7 +10,7 @@ const SideDrawer = props => {
     
     return (
         <nav className={drawerClass}>
-            <Link className="navbar-brand big-navbar-brand" to="/">be <span>Bookaholic</span></Link>
+            <Link className="navbar-brand big-navbar-brand" to="/" onClick={props.clear}>be <span>Bookaholic</span></Link>
             <ul>
                 <li>
                     <Link to="/view/Classic" onClick={props.clear}>

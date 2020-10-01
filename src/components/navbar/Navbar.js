@@ -14,11 +14,12 @@ function Navbar() {
     const [bookList, setBookList] = useState(false);
     const [profileOption, setProfileOption] = useState(false);
     
-    const drawerToggleClickHnadler = () => { setstate(!state); };
-    const toggleBookListOption = () => { setBookList(!bookList); setProfileOption(false);};
-    const toogleProfileOption = () => { setProfileOption(!profileOption); setBookList(false)};
-    const backDropHandler = () => { setstate(false); }
     const clearOptions = () => { setBookList(false); setProfileOption(false); };
+    const drawerToggleClickHnadler = () => { setstate(!state); clearOptions(); };
+    const backDropHandler = () => { setstate(false); }
+    const toggleBookListOption = () => { setBookList(!bookList); setProfileOption(false); };
+    const toogleProfileOption = () => { setProfileOption(!profileOption); setBookList(false); backDropHandler(false)};
+    
 
     //For signout operation
     const logout = () => {
@@ -35,6 +36,7 @@ function Navbar() {
                 drawerToggleClickHnadler={drawerToggleClickHnadler} 
                 toggleBookListOption={toggleBookListOption}
                 toogleProfileOption={toogleProfileOption}
+                backDropHandler={backDropHandler}
             />
             <SideDrawer show={state} clear={drawerToggleClickHnadler}/>
             <BookDropdown show={bookList} clear={clearOptions}/>
