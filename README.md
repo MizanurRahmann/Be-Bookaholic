@@ -3,12 +3,14 @@ In recent years online bookstores have become so popular and many people are now
 
 Be Bookaholic is that kind of simple online book shop(e-bookshop) with most common features.
 
+**Live Demo :** [https://br-bookaholic.web.app](https://br-bookaholic.web.app)
+
 ## Features:
 * Ease of use.
 * Site speed.
 * Mobile friendly.
 * Add favourite books in wishlist for future. (coming soon)
-* Save product to the cart. (coming soon)
+* Save product to the cart.
 
 ## Technology:
 * React
