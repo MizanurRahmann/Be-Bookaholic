@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase/util';
 import { useStateValue } from '../Context/StateProvider';
+import { Link } from 'react-router-dom';
 
 function BookDetail(props) {
     const BOOK_ID = props.match.params.id;
@@ -104,7 +105,9 @@ function BookDetail(props) {
                 </div>
                 {
                     !state.basket.find(elemnet => elemnet.id === BOOK_ID)
-                        ? <div className="addToCart" onClick={addToCart}>Add to Cart</div>
+                        ? state.authenticated
+                            ? <div className="addToCart" onClick={addToCart}>Add to Cart</div>
+                            : <Link className="addToCart" to='/login' >Add to Cart</Link>
                         : <div className="addedToCart">added to Cart</div>
                 }
             </div>

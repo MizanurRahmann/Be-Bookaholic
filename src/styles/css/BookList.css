@@ -154,9 +154,9 @@ a.card__dark{
   text-align: center; text-transform: uppercase;
   border-radius: 5px; cursor: pointer; transition: .3s;
 }
-.addToCart{ background: linear-gradient(-45deg, var(--blue-dark) 0%, var(--blue) 100%); color: #fff; font-size: 18px;}
+.addToCart{ text-decoration: none; background: linear-gradient(-45deg, var(--blue-dark) 0%, var(--blue) 100%); color: #fff; font-size: 18px;}
 .addedToCart{ background: #ccc; color: #444; font-size: 15px; }
-.addToCart:hover{ background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%); }
+.addToCart:hover{text-decoration: none; color: #fff; background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%); }
 
 
 /* ========= BOOK CATEGOROY WISE VIEW PART ======= */
@@ -196,6 +196,7 @@ a.card__dark{
     width: 100%; min-height: 40vh; 
     background: linear-gradient(to top, #fff 0%, #3366FF0F 50%, #fff 100%);
   }
+  .card__option{ display: none; }
   .frame{ height: 30vh; width: 44%; }
   .page{ height: 30vh; width: 100%; }
   .page1 { transform: rotateY(-10deg) translateZ(0); }
