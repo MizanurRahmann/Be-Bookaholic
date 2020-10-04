@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase/util';
 import { useStateValue } from '../Context/StateProvider';
 import { Link } from 'react-router-dom';
+import BookLoading from './BookLoading';
 
 function BookDetail(props) {
     const BOOK_ID = props.match.params.id;
     const IMAGE_URL = `https://firebasestorage.googleapis.com/v0/b/br-bookaholic.appspot.com/o/BookImages%2F${BOOK_ID}.jpg?alt=media&token=6316abd8-eee5-4e16-a446-9c9ad9a2316d`;
     const [book, setBook] = useState({});
-    const [viewHandler, setViewHandler] = useState(true);
     const [state, dispatch] = useStateValue();
+    const [viewHandler, setViewHandler] = useState(true);
+    const [loading, setLoading] = useState(false)
 
     const addToCart = () => {
         dispatch({
@@ -26,18 +28,29 @@ function BookDetail(props) {
     }
 
     useEffect(() => {
+        setLoading(true);
+
         const BOOK_REF = db.collection('Books').doc(BOOK_ID);
         BOOK_REF.get()
             .then(doc => {
                 if (doc.exists) setBook(doc.data());
                 else console.log("No such document!");
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error.message);
+                setLoading(false);
             })
     }, [BOOK_ID, viewHandler])
 
 
+    if(loading)
+        return (
+            <div className="loadingTemplate">
+                <BookLoading />
+            </div>
+        )
+    
     return (
         <div className="book__details">
             <div className="book__image-block">
