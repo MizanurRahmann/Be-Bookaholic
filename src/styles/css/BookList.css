@@ -201,7 +201,7 @@ a.card__dark{
     background: linear-gradient(to top, #fff 0%, #3366FF0F 50%, #fff 100%);
   }
   .card__option{ display: none; }
-  a.card__dark{ display: none; }
+  a.card__dark{ width: 100%; height: 120px; top: 0; opacity: 0;}
   .frame{ height: 30vh; width: 44%; }
   .page{ height: 30vh; width: 100%; }
   .page1 { transform: rotateY(-10deg) translateZ(0); }
