@@ -55,7 +55,7 @@ return (
                 <div className="i">
                     <i className="far fa-envelope"></i>
                 </div>
-                <div>
+                <div className="inputDiv">
                     <input
                         type="email"
                         className="input"
@@ -70,7 +70,7 @@ return (
                 <div className="i">
                     <i className="fas fa-lock"></i>
                 </div>
-                <div>
+                <div className="inputDiv">
                     <input
                         type="password"
                         className="input"
@@ -78,9 +78,12 @@ return (
                         value={password}
                         onChange={event => setPassword(event.target.value)}
                     />
-                    {errors && <small className="textError">{errors}</small>}
                 </div>
             </div>
+            <div className="textError">
+                {errors && <small>{errors}</small>}
+            </div>
+
 
             <input type="submit" className="btn__submit" value="Login" onClick={login} />
 
