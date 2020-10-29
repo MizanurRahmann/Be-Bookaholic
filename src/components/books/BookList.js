@@ -69,7 +69,7 @@ function BookList() {
                 </Slider>}
 
                 {!loading && <Slider {...settings} className="book__carousel">
-                    {classicBook.map(cb => (<Book key={cb.id} id={cb.id} name={cb.name} price={cb.price} />))}
+                    {classicBook.map(cb => (<Book key={cb.id} id={cb.id} name={cb.name} price={cb.price} author={cb.author} />))}
                 </Slider>}
             </div>
 
@@ -85,7 +85,7 @@ function BookList() {
                 </Slider>}
 
                 {!loading && <Slider {...settings} className="book__carousel">
-                    {nonFictionBook.map(nfb => (<Book key={nfb.id} id={nfb.id} name={nfb.name} price={nfb.price} />))}
+                    {nonFictionBook.map(nfb => (<Book key={nfb.id} id={nfb.id} name={nfb.name} price={nfb.price} author={nfb.author} />))}
                 </Slider>}
 
             </div>
@@ -102,7 +102,7 @@ function BookList() {
                 </Slider>}
 
                 {!loading && <Slider {...settings} className="book__carousel">
-                    {fictionBook.map(fb => (<Book key={fb.id} id={fb.id} name={fb.name} price={fb.price} />))}
+                    {fictionBook.map(fb => (<Book key={fb.id} id={fb.id} name={fb.name} price={fb.price} author={fb.author} />))}
                 </Slider>}
             </div>
 
@@ -117,7 +117,7 @@ function BookList() {
                     <BookLoading /><BookLoading />
                 </Slider>}
                 {!loading && <Slider {...settings} className="book__carousel">
-                    {islamikBook.map(ib => (<Book key={ib.id} id={ib.id} name={ib.name} price={ib.price} />))}
+                    {islamikBook.map(ib => (<Book key={ib.id} id={ib.id} name={ib.name} price={ib.price} author={ib.author} />))}
                 </Slider>}
             </div>
 

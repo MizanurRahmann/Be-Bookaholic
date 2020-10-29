@@ -46,6 +46,11 @@ function reducer(state, action) {
                 ...state,
                 basket: state.basket.filter((value) => { return value.id !== action.itemId; })
             }
+        case 'REMOVE_FROM_WISHLIST':
+            return {
+                ...state,
+                wishlist: state.wishlist.filter((value) => { return value.id !== action.itemId; })
+            }
         case 'CREATE_USER':
             return {
                 ...state,

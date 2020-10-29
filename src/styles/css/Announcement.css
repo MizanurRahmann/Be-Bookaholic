@@ -11,8 +11,8 @@
 .block__one .image, .block__five .image{ width: 40%; }
 .block__five .details, .block__one .details{ width: 60%; padding: 0 0 0 20px;}
 
-.details h1 { font-size: 45px; font-family: var(--anton-font); color: #333;}
-.details h1 span { font-size: 25px; font-weight: 400; font-family: var(--roboto-font);}
+.details h1 { font-size: 40px; font-family: var(--anton-font); color: #333;}
+.details h1 span { font-size: 20px; font-weight: 400; font-family: var(--roboto-font);}
 .details p { font-size: 16px; color: #333;}
 .block__five .details h1 { color: #fff; font-size: 75px; font-family: var(--anton-font); line-height: 65px;}
 .block__five .details h2 { color: #fff; font-size: 26px; font-weight: 300; font-family: var(--roboto-font)}

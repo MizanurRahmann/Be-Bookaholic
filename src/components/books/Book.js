@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../Context/StateProvider';
 
-function Book({ id, name, price }) {
+function Book({ id, name, price, author }) {
     const [state, dispatch] = useStateValue();
 
     const addToCart = () => {
@@ -22,7 +22,8 @@ function Book({ id, name, price }) {
             item: {
                 id: id,
                 name: name,
-                price: price
+                price: price,
+                author: author
             }
         })
     }

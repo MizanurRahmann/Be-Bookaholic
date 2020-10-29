@@ -13,7 +13,7 @@ function Offers() {
                         <div className="image"><img src={All} width="100%" alt="ADD"/></div>
                         <div className="details">
                             <h1>Find Books <span>for All Ages</span></h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit scipit sagittis leo sit met condi.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim.</p>
                             <Link to="/" className="purchase">Purchase <span className="arrow"> <i className="fas fa-arrow-right"></i> </span></Link>
                         </div>
                     </div>

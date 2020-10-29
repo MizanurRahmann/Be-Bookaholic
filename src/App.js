@@ -11,6 +11,7 @@ import Auth from './components/auth/Auth';
 import { auth, db } from './firebase/util';
 import { useStateValue } from './components/Context/StateProvider';
 import Profile from './components/profile/Profile';
+import Wishlist from './components/wishlist/Wishlist';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -73,6 +74,10 @@ function App() {
         <Route
           exact path='/profile'
           render={() => (!state.authenticated ? <Auth /> : <Profile />)}
+        />
+        <Route
+          exact path='/profile/wishlist'
+          render={() => (!state.authenticated ? <Auth /> : <Wishlist />)}
         />
         <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/details/:id' component={BookDetail} />
