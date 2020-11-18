@@ -17,9 +17,9 @@ function Checkout() {
             tp += book.amount * parseInt(book.price);
         })
         setTotal(tp);
-        state.total = tp;
+
+        tp > 1000 ? state.total = tp - tp*.15 : state.total = tp;
     };
-    console.log(state.total);
 
     //Delete from basket
     const deleteItem = id => {
@@ -110,7 +110,7 @@ function Checkout() {
                             }
                         </div>
                     </div>
-                    <Link to='/' className="btn-shipping">Go to shipping page</Link>
+                    <Link to='/shopping' className="btn-shipping">Go to shipping page</Link>
                 </div>
             </div>
         </div>

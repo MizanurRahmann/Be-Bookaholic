@@ -1,0 +1,11 @@
+.shopping{ margin-top: 80px; display: flex; background: #f7f7f7; font-family: var(--roboto-font);}
+.shopping__tasks{
+    width: 70%; height: 100vh;
+}
+
+.task{ width: 100%; padding: 20px;}
+.shopping__tasks-task{
+    padding: 40px; background: #fff; border-radius: 10px;
+    width: 100%; height: calc(100vh - 120px);
+}
+.shopping__tasks-task h1{ font-family: var(--anton-font); }
