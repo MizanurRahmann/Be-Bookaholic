@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../styles/css/shopping.css';
 import { useStateValue } from '../Context/StateProvider';
 import clipboard from '../../styles/images/checkout/clipboard.png';
+import PIForm from './PIForm';
 
 function Shopping() {
     const [count, setCount] = useState(0);
@@ -13,15 +14,16 @@ function Shopping() {
             <div className="shopping__tasks">
                 <div className="shopping__tasks-progress"></div>
                 <div className="task">
+
                     <div className="shopping__tasks-task">
-                        <h1>Adress</h1>
+                        <PIForm count={count} setCount={setCount}/>
                     </div>
                 </div>
             </div>
             <div className="checkout__calc">
                 <h1>Order Summary</h1>
                 <div className="checkout__add">
-                    <img src= {clipboard} alt="delivery-truck" />
+                    <img src={clipboard} alt="delivery-truck" />
                     <div className="checkout__add-text">
                         <h3>to get <span>15%</span> offer</h3>
                         <p>buy books more than <span>৳1000</span></p>
