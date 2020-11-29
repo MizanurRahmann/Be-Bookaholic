@@ -25,7 +25,7 @@ function Shopping() {
                             { title: "Payment" },
                             { title: "Confirm Order" },
                         ]}
-                        activeStep={1}
+                        activeStep={0}
                         size={40}
                         activeColor="#3465BF"
                         completeColor="#2F3973"
@@ -43,13 +43,11 @@ function Shopping() {
             <div className="checkout__calc">
                 <h1>Order Summary</h1>
                 <div className="checkout__add">
-                    <img src={clipboard} alt="delivery-truck" />
+                    <img src={clipboard} alt="delivery-truck" width="90px" />
                     <div className="checkout__add-text">
-                        <h3>
-                            to get <span>15%</span> offer
-                        </h3>
+                        <h3>Be Bookaholic</h3>
                         <p>
-                            buy books more than <span>৳1000</span>
+                            Be <span>Amazing</span>
                         </p>
                     </div>
                 </div>
