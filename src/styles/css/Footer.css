@@ -3,6 +3,7 @@
     padding: 40px;
     background: #333;
     display: flex;
+    flex-wrap: wrap;
 }
 .footer .left_block {
     width: 30%;
@@ -11,6 +12,7 @@
 .footer .right_block {
     width: 70%;
     display: flex;
+    flex-wrap: wrap;
     border-bottom: 3px solid var(--blue);
 }
 .footer .left_block p,
@@ -88,4 +90,28 @@
 
 .footer .right_block .items .social_link .link svg:hover {
     color: var(--blue-light);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        width: 100%;
+        padding: 20px;
+    }
+    .footer .left_block {
+        width: 100%;
+        padding: 20px 0 20px 20px;
+        margin-bottom: 20px;
+    }
+    .footer .right_block {
+        padding: 0 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .footer .right_block .items {
+        width: 40%;
+        margin-bottom: 40px;
+    }
+    .footer .right_block .items.social {
+        width: 100%;
+    }
 }

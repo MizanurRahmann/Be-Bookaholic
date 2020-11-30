@@ -23,11 +23,11 @@ function Footer() {
             <div className="right_block">
                 <div className="items">
                     <h3>Products</h3>
-                    <Link to="/">Fiction</Link>
-                    <Link to="/">Non Fiction</Link>
-                    <Link to="/">Classic</Link>
-                    <Link to="/">Islamik</Link>
-                    <Link to="/">Historic</Link>
+                    <Link to="/view/Fiction">Fiction</Link>
+                    <Link to="/view/Nonfiction">Non Fiction</Link>
+                    <Link to="/view/Classic">Classic</Link>
+                    <Link to="/view/Islamik">Islamik</Link>
+                    <Link to="/view/Historic">Historic</Link>
                 </div>
                 <div className="items">
                     <h3>About</h3>
@@ -43,7 +43,7 @@ function Footer() {
                     <Link to="/">Server status</Link>
                     <Link to="/">Demo</Link>
                 </div>
-                <div className="items">
+                <div className="items social">
                     <h3>Get in touch</h3>
                     <p>Question or feedback?</p>
                     <p>We would like to hear you from</p>
