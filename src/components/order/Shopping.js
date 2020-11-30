@@ -57,14 +57,6 @@ function Shopping() {
                         <div>{state.basket.length}</div>
                     </div>
                     <div className="calc__item">
-                        <div className="item__name">Subtotal</div>{" "}
-                        <div>৳ {state.total}</div>
-                    </div>
-                    <div className="calc__item">
-                        <div className="item__name">Shipping</div>{" "}
-                        <div>৳ 50</div>
-                    </div>
-                    <div className="calc__item">
                         <div className="item__name">Total</div>
                         <div className="totalCost">
                             {state.basket.length > 0 ? state.total + 50 : 0}

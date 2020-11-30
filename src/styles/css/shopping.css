@@ -1,6 +1,7 @@
 .shopping {
     margin-top: 80px;
     display: flex;
+    flex-wrap: wrap;
     background: #f7f7f7;
     font-family: var(--roboto-font);
 }
@@ -27,11 +28,12 @@
 
 .formItems {
     display: flex;
+    flex-wrap: wrap;
 }
 .formItem {
     width: 50%;
     padding: 0 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .formItem input.form-field {
     width: 100%;
@@ -42,12 +44,13 @@
     outline: none;
 }
 .formItem label {
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 15px;
     font-weight: 300;
 }
 button.submit {
     padding: 10px 30px;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 20px;
     border: none;
     outline: none;
@@ -62,4 +65,27 @@ button.submit {
     padding: 0 20px 20px 20px;
     background: #fff;
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .shopping__tasks {
+        width: 100%;
+    }
+    .formItem {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .shopping__tasks-task {
+        padding: 10px;
+    }
+    .formItem input.form-field {
+        font-size: 15px;
+        padding: 5px;
+        border: 2px solid var(--blue-dark);
+    }
+    .shopping__tasks-task h1 {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
 }
