@@ -1,78 +1,157 @@
-.auth{ height: 100vh; width: 100%; display: flex; flex-wrap: wrap; overflow: hidden;}
-.auth__container{ 
-    width: 50%; height: 100%; 
-    display: flex; justify-content: center; align-items: center;
+.auth {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
-.auth__image{ width: 70%;}
-.auth_function{ width: 90%; margin-left: -100px;}
-.signup__link{ 
-    width: 60%; margin: auto; margin-top: 10px;
-    display: flex; justify-content: space-between;
-    font-size: 18px; color: var(--blue); text-align: center; 
+.auth__container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth__image {
+    width: 70%;
+}
+.auth_function {
+    width: 90%;
+    margin-left: -100px;
+}
+.signup__link {
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: var(--blue);
+    text-align: center;
     cursor: pointer;
 }
-.signup__link div:hover{ color: var(--blue-dark); }
-
+.signup__link div:hover {
+    color: var(--blue-dark);
+}
 
 /* login form */
-form{ width: 100%;}
-form h2{ 
+form {
+    width: 100%;
+}
+form h2 {
     font-weight: 300;
-    font-size: 25px; 
+    font-size: 25px;
     text-align: center;
     margin: 10px 0;
 }
-.input_div{
-    width: 60%; margin: auto; margin-top: 30px;
+.input_div {
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
     border-bottom: 3px solid #d9d9d9;
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
 }
-.input_div .inputDiv{
+.input_div .inputDiv {
     width: 100%;
     background: transparent;
 }
-.input_div input{
-    width: 100%; background: transparent;
-    border: none; outline: none;
+.input_div input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
     padding: 10px 20px;
     font-size: 20px;
 }
-.i i{ color: #d9d9d9; transition: .3s; }
-
-.btn__submit{
-    display: block;
-    width: 60%; height: 50px;
-    margin: auto; margin-top: 40px;
-    border-radius: 10px;
-    font-size: 1.2rem; color: #fff;
-    outline: none; border: none;
-    background-image: linear-gradient(to right, var(--blue), var(--blue-dark), var(--blue));
-    text-transform: uppercase; background-size: 200%;
-    transform: .5s; cursor: pointer;
+.i i {
+    color: #d9d9d9;
+    transition: 0.3s;
 }
-.btn__submit:hover{ background-position: right; }
 
-.textError{
-    width: 60%; margin: auto;
+.btn__submit {
+    display: block;
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(
+        to right,
+        var(--blue),
+        var(--blue-dark),
+        var(--blue)
+    );
+    text-transform: uppercase;
+    background-size: 200%;
+    transform: 0.5s;
+    cursor: pointer;
+}
+.btn__submit:hover {
+    background-position: right;
+}
+
+.textError {
+    width: 60%;
+    margin: auto;
     color: red;
     margin-top: 10px;
 }
 
-@media (max-width: 768px){ 
-    .auth__container{  width: 100%; padding: 0 25px;}
-    .auth__container-image{ height: 10vh; margin-top: 70px;}
-    .auth__image{ height: 100px;}
-    .auth_function{ width: 100%; margin-left: 0; height: 70vh;}
-
-    form{ width: 100%; font-family: var(--roboto-font);}
-    form h2{ font-weight: 400; font-size: 25px; margin: 15px 0; }
-    .input_div{ width: 90%; border-bottom: 1px solid #d9d9d9;}
-    .input_div input{ width: 100%; background: transparent; padding: 10px; font-size: 16px; }
-    .btn__submit{
-        width: 90%; height: 40px;
-        margin: auto; margin-top: 20px;
-        border-radius: 5px; font-size: 16px;
+@media (max-width: 768px) {
+    .auth__container {
+        width: 100%;
+        padding: 0 25px;
     }
-    .textError{ width: 90%; }
-    .signup__link{ width: 90%; font-size: 14px; }
+    .auth__container-image {
+        height: 10vh;
+        margin-top: 70px;
+    }
+    .auth__image {
+        height: 100px;
+    }
+    .auth_function {
+        width: 100%;
+        margin-left: 0;
+        height: 70vh;
+    }
+
+    form {
+        width: 100%;
+        font-family: var(--roboto-font);
+    }
+    form h2 {
+        font-weight: 400;
+        font-size: 25px;
+        margin: 15px 0;
+    }
+    .input_div {
+        width: 90%;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    .input_div input {
+        width: 100%;
+        background: transparent;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .btn__submit {
+        width: 90%;
+        height: 40px;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .textError {
+        width: 90%;
+    }
+    .signup__link {
+        width: 90%;
+        font-size: 14px;
+    }
 }

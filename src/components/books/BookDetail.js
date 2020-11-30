@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../../firebase/util';
-import { useStateValue } from '../Context/StateProvider';
-import { Link } from 'react-router-dom';
-import BookLoading from './BookLoading';
+import React, { useState, useEffect } from "react";
+import { db } from "../../firebase/util";
+import { useStateValue } from "../Context/StateProvider";
+import { Link } from "react-router-dom";
+import BookLoading from "./BookLoading";
 
 function BookDetail(props) {
     const BOOK_ID = props.match.params.id;
@@ -10,47 +10,49 @@ function BookDetail(props) {
     const [book, setBook] = useState({});
     const [state, dispatch] = useStateValue();
     const [viewHandler, setViewHandler] = useState(true);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
 
     const addToCart = () => {
         dispatch({
-            type: 'ADD_TO_BASKET',
+            type: "ADD_TO_BASKET",
             item: {
                 id: BOOK_ID,
                 name: book.name,
-                price: book.price
-            }
-        })
-    }
+                price: book.price,
+            },
+        });
+    };
 
-    const shortView = description => {
-        return description && description.replace(/(([^\s]+\s\s*){50})(.*)/, "$1....");
-    }
+    const shortView = (description) => {
+        return (
+            description &&
+            description.replace(/(([^\s]+\s\s*){50})(.*)/, "$1....")
+        );
+    };
 
     useEffect(() => {
         setLoading(true);
 
-        const BOOK_REF = db.collection('Books').doc(BOOK_ID);
+        const BOOK_REF = db.collection("Books").doc(BOOK_ID);
         BOOK_REF.get()
-            .then(doc => {
+            .then((doc) => {
                 if (doc.exists) setBook(doc.data());
                 else console.log("No such document!");
                 setLoading(false);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error.message);
                 setLoading(false);
-            })
-    }, [BOOK_ID, viewHandler])
+            });
+    }, [BOOK_ID, viewHandler]);
 
-
-    if(loading)
+    if (loading)
         return (
             <div className="loadingTemplate">
                 <BookLoading />
             </div>
-        )
-    
+        );
+
     return (
         <div className="book__details">
             <div className="book__image-block">
@@ -70,30 +72,37 @@ function BookDetail(props) {
                     {Array(book.ratting)
                         .fill()
                         .map((_) => (
-                            <i className="fas fa-star" style={{ color: "#FDCC0D" }}></i>
-                        ))
-                    }
-                    {Array(book.ratting && (5 - book.ratting))
+                            <i
+                                className="fas fa-star"
+                                style={{ color: "#FDCC0D" }}
+                            ></i>
+                        ))}
+                    {Array(book.ratting && 5 - book.ratting)
                         .fill()
                         .map((_) => (
-                            <i className="far fa-star" style={{ color: "#444" }}></i>
-                        ))
-                    }
+                            <i
+                                className="far fa-star"
+                                style={{ color: "#444" }}
+                            ></i>
+                        ))}
                     <div className="ratting__count">
                         <i class="fas fa-share-alt"></i> 230
                     </div>
                 </div>
                 <div className="description">
-                    {viewHandler ? shortView(book.description) : book.description}
                     {viewHandler
-                        ? <span onClick={() => setViewHandler(false)}>More</span>
-                        : <span onClick={() => setViewHandler(true)}>Less</span>
-                    }
+                        ? shortView(book.description)
+                        : book.description}
+                    {viewHandler ? (
+                        <span onClick={() => setViewHandler(false)}>More</span>
+                    ) : (
+                        <span onClick={() => setViewHandler(true)}>Less</span>
+                    )}
                 </div>
                 <div className="price">
                     <span>{`${book.less && book.less}%`}</span>
-                    <strike>৳ {book.price}</strike>
-                    ৳{Math.floor(book.price - (book.price * book.less / 100))}
+                    <strike>৳ {book.price}</strike>৳
+                    {Math.floor(book.price - (book.price * book.less) / 100)}
                 </div>
 
                 <div className="others-info">
@@ -102,7 +111,9 @@ function BookDetail(props) {
                 </div>
                 <div className="others-info">
                     <div className="heading">Cattegories</div>
-                    <div className="info">{book.categories && book.categories.join(", ")}</div>
+                    <div className="info">
+                        {book.categories && book.categories.join(", ")}
+                    </div>
                 </div>
                 <div className="others-info">
                     <div className="heading">Pages</div>
@@ -116,17 +127,22 @@ function BookDetail(props) {
                     <div className="heading">Languages</div>
                     <div className="info">{book.language}</div>
                 </div>
-                {
-                    !state.basket.find(elemnet => elemnet.id === BOOK_ID)
-                        ? state.authenticated
-                            ? <div className="addToCart" onClick={addToCart}>Add to Cart</div>
-                            : <Link className="addToCart" to='/login' >Add to Cart</Link>
-                        : <div className="addedToCart">added to Cart</div>
-                }
+                {!state.basket.find((elemnet) => elemnet.id === BOOK_ID) ? (
+                    state.authenticated ? (
+                        <div className="addToCart" onClick={addToCart}>
+                            Add to Cart
+                        </div>
+                    ) : (
+                        <Link className="addToCart" to="/login">
+                            Add to Cart
+                        </Link>
+                    )
+                ) : (
+                    <div className="addedToCart">added to Cart</div>
+                )}
             </div>
         </div>
-    )
+    );
 }
 
-export default BookDetail
-
+export default BookDetail;
