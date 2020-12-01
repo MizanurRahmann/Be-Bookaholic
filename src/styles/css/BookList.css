@@ -366,6 +366,7 @@ a.card__dark {
 
 /* ========= BOOK CATEGOROY WISE VIEW PART ======= */
 .categoryView {
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-wrap: wrap;
     padding: 20px 70px;
