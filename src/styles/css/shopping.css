@@ -67,6 +67,52 @@ button.submit {
     border-radius: 10px;
 }
 
+/* ------------- PAYMENT METHODS ------------- */
+.payment {
+}
+.payment-options {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+}
+.payment-options .payment-option {
+    width: 20%;
+    height: 7vh;
+    padding: 40px 0;
+    margin-right: 30px;
+    min-height: 10vh;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.payment-options .payment-option:hover {
+    border: 3px solid var(--blue);
+}
+.payment-options .payment-option.active {
+    position: relative;
+    border: 3px solid #46cb18;
+}
+.payment-options .payment-option.active i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #46cb18;
+    font-size: 25px;
+}
+.payment-options .payment-option img {
+    height: 7vh;
+}
+.payment-options .payment-option.rocket img {
+    height: 5vh;
+}
+
 @media (max-width: 768px) {
     .shopping__tasks {
         width: 100%;

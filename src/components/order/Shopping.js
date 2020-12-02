@@ -8,6 +8,7 @@ import "../../styles/css/shopping.css";
 
 // Components
 import PIForm from "./PIForm";
+import PaymentForm from "./PaymentForm";
 
 function Shopping() {
     const [count, setCount] = useState(0);
@@ -25,7 +26,7 @@ function Shopping() {
                             { title: "Payment" },
                             { title: "Confirm Order" },
                         ]}
-                        activeStep={0}
+                        activeStep={count}
                         size={40}
                         activeColor="#3465BF"
                         completeColor="#2F3973"
@@ -34,7 +35,11 @@ function Shopping() {
                 </div>
                 <div className="task">
                     <div className="shopping__tasks-task">
-                        <PIForm count={count} setCount={setCount} />
+                        {count === 0 ? (
+                            <PIForm count={count} setCount={setCount} />
+                        ) : count === 1 ? (
+                            <PaymentForm />
+                        ) : null}
                     </div>
                 </div>
             </div>
