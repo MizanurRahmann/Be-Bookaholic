@@ -68,11 +68,9 @@ button.submit {
 }
 
 /* ------------- PAYMENT METHODS ------------- */
-.payment {
-}
 .payment-options {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0 30px 0;
     display: flex;
 }
 .payment-options .payment-option {
@@ -111,6 +109,55 @@ button.submit {
 }
 .payment-options .payment-option.rocket img {
     height: 5vh;
+}
+
+/* ------------- CASH ON DELIVERY METHODS ------------- */
+.CashOnDeliveryMethod {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.CashOnDeliveryMethod div {
+    height: 40vh;
+    width: 50%;
+}
+.CashOnDeliveryMethod .des {
+    padding: 0 20px 0 0;
+}
+.CashOnDeliveryMethod .image img {
+    height: 40vh;
+}
+.CashOnDeliveryMethod h2 {
+    text-align: left;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.CashOnDeliveryMethod h1 {
+    font-family: var(--roboto-font);
+    font-size: 40px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.CashOnDeliveryMethod .buttonBox {
+    width: 100%;
+    height: fit-content;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+.CashOnDeliveryMethod .buttonBox .submit {
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.CashOnDeliveryMethod .buttonBox button.back {
+    background: transparent;
+    color: var(--blue);
+    border: none;
+    outline: none;
+    font-size: 18px;
 }
 
 @media (max-width: 768px) {

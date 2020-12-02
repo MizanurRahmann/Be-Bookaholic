@@ -7,7 +7,7 @@ import clipboard from "../../styles/images/checkout/clipboard.png";
 import "../../styles/css/shopping.css";
 
 // Components
-import PIForm from "./PIForm";
+import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
 
 function Shopping() {
@@ -36,9 +36,9 @@ function Shopping() {
                 <div className="task">
                     <div className="shopping__tasks-task">
                         {count === 0 ? (
-                            <PIForm count={count} setCount={setCount} />
+                            <AddressForm count={count} setCount={setCount} />
                         ) : count === 1 ? (
-                            <PaymentForm />
+                            <PaymentForm count={count} setCount={setCount} />
                         ) : null}
                     </div>
                 </div>

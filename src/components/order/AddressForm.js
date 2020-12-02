@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from "../Context/StateProvider";
 
-function PIForm({ count, setCount }) {
+function AddressForm({ count, setCount }) {
     const [state, dispatch] = useStateValue();
     const [village, setVillage] = useState("");
     const [thana, setThana] = useState("");
@@ -85,10 +85,10 @@ function PIForm({ count, setCount }) {
                 type="button"
                 className="submit"
             >
-                Submit
+                Next Step
             </button>
         </form>
     );
 }
 
-export default PIForm;
+export default AddressForm;

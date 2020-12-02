@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+
+// Components
+import CashOnDeliveryMethod from "./CashOnDeliveryMethod";
 import SelectPaymentMethod from "./SelectPaymentMethod";
 
-function PaymentForm() {
+function PaymentForm({ count, setCount }) {
     const [method, setMethod] = useState(0);
 
     return (
@@ -15,7 +18,7 @@ function PaymentForm() {
             ) : method === 2 ? (
                 <p>rocket Method</p>
             ) : (
-                <p>CashOnDelivery Method</p>
+                <CashOnDeliveryMethod setCount={setCount} />
             )}
         </form>
     );
