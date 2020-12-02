@@ -335,12 +335,16 @@ a.card__dark {
     font-weight: 300;
 }
 
+.btn_block {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+}
 .addToCart,
 .addedToCart {
     display: inline-block;
-    min-width: 30%;
+    min-width: 20%;
     padding: 10px 30px;
-    margin-top: 25px;
     text-align: center;
     text-transform: uppercase;
     border-radius: 5px;
@@ -362,6 +366,16 @@ a.card__dark {
     text-decoration: none;
     color: #fff;
     background: linear-gradient(45deg, var(--blue-dark) 0%, var(--blue) 100%);
+}
+.addTowishlist {
+    margin-left: 40px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: red;
+}
+.addTowishlist i {
+    font-size: 18px;
 }
 
 /* ========= BOOK CATEGOROY WISE VIEW PART ======= */

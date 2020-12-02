@@ -129,16 +129,31 @@ function BookDetail(props) {
                 </div>
                 {!state.basket.find((elemnet) => elemnet.id === BOOK_ID) ? (
                     state.authenticated ? (
-                        <div className="addToCart" onClick={addToCart}>
-                            Add to Cart
+                        <div className="btn_block">
+                            <div className="addToCart" onClick={addToCart}>
+                                Add to Cart
+                            </div>
+                            <div className="addTowishlist">
+                                <i class="far fa-heart"></i> Add to wishlist
+                            </div>
                         </div>
                     ) : (
-                        <Link className="addToCart" to="/login">
-                            Add to Cart
-                        </Link>
+                        <div className="btn_block">
+                            <Link className="addToCart" to="/login">
+                                Add to Cart
+                            </Link>
+                            <Link className="addTowishlist" to="/login">
+                                <i class="far fa-heart"></i> Add to wishlist
+                            </Link>
+                        </div>
                     )
                 ) : (
-                    <div className="addedToCart">added to Cart</div>
+                    <div className="btn_block">
+                        <div className="addedToCart">Added to Cart</div>
+                        <div className="addTowishlist">
+                            <i class="far fa-heart"></i> Add to wishlist
+                        </div>
+                    </div>
                 )}
             </div>
         </div>
