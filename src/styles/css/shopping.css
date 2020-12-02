@@ -140,19 +140,19 @@ button.submit {
     font-weight: bolder;
     text-transform: uppercase;
 }
-.CashOnDeliveryMethod .buttonBox {
+.buttonBox {
     width: 100%;
     height: fit-content;
     margin-top: 25px;
     display: flex;
     align-items: center;
 }
-.CashOnDeliveryMethod .buttonBox .submit {
+.buttonBox .submit {
     margin-top: 0;
     margin-left: 20px;
 }
 
-.CashOnDeliveryMethod .buttonBox button.back {
+.buttonBox button.back {
     background: transparent;
     color: var(--blue);
     border: none;
