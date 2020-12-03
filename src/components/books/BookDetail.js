@@ -23,6 +23,18 @@ function BookDetail(props) {
         });
     };
 
+    const addToWishList = () => {
+        dispatch({
+            type: "ADD_TO_WISHLIST",
+            item: {
+                id: BOOK_ID,
+                name: book.name,
+                price: book.price,
+                author: book.author,
+            },
+        });
+    };
+
     const shortView = (description) => {
         return (
             description &&
@@ -127,34 +139,45 @@ function BookDetail(props) {
                     <div className="heading">Languages</div>
                     <div className="info">{book.language}</div>
                 </div>
-                {!state.basket.find((elemnet) => elemnet.id === BOOK_ID) ? (
-                    state.authenticated ? (
-                        <div className="btn_block">
+                <div className="btn_block">
+                    {!state.basket.find((elemnet) => elemnet.id === BOOK_ID) ? (
+                        state.authenticated ? (
                             <div className="addToCart" onClick={addToCart}>
                                 Add to Cart
                             </div>
-                            <div className="addTowishlist">
-                                <i class="far fa-heart"></i> Add to wishlist
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="btn_block">
+                        ) : (
                             <Link className="addToCart" to="/login">
                                 Add to Cart
                             </Link>
+                        )
+                    ) : (
+                        <div className="addedToCart">Added to Cart</div>
+                    )}
+
+                    {!state.wishlist.find(
+                        (elemnet) => elemnet.id === BOOK_ID
+                    ) ? (
+                        state.authenticated ? (
+                            <div
+                                className="addTowishlist"
+                                onClick={addToWishList}
+                            >
+                                <i class="far fa-heart"></i> Add to wishlist
+                            </div>
+                        ) : (
                             <Link className="addTowishlist" to="/login">
                                 <i class="far fa-heart"></i> Add to wishlist
                             </Link>
-                        </div>
-                    )
-                ) : (
-                    <div className="btn_block">
-                        <div className="addedToCart">Added to Cart</div>
-                        <div className="addTowishlist">
+                        )
+                    ) : (
+                        <div
+                            className="addTowishlist"
+                            style={{ color: "#ccc" }}
+                        >
                             <i class="far fa-heart"></i> Add to wishlist
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
         </div>
     );

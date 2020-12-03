@@ -211,6 +211,19 @@
     color: #fff;
 }
 
+.calc button.btn-shipping {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    background: #777;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .checkout__items {
         width: 100%;

@@ -54,6 +54,7 @@ function Checkout() {
 
     //Calculate total if any kind of basket value changed
     useEffect(() => {
+        window.scrollTo(0, 0);
         calcTotal();
     }, [JSON.stringify(state.basket)]);
 
@@ -121,9 +122,15 @@ function Checkout() {
                             )}
                         </div>
                     </div>
-                    <Link to="/shopping" className="btn-shipping">
-                        Go to shipping page
-                    </Link>
+                    {total > 0 ? (
+                        <Link to="/shopping" className="btn-shipping">
+                            Go to shipping page
+                        </Link>
+                    ) : (
+                        <button className="btn-shipping">
+                            Go to Shipping Page
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
