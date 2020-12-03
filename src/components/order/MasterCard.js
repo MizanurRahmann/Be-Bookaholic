@@ -20,13 +20,15 @@ function MasterCard({ setCount }) {
         const getClientSecret = async () => {
             const response = await axios({
                 method: "post",
-                url: `payments/create?total=${state.total * 100}`,
+                url: `/payments/create?total=${(state.total + 50) * 100}`,
             });
             setClientSecret(response.data.clientSecret);
         };
 
         getClientSecret();
     }, [state.basket]);
+
+    console.log("This client secret is --> ", clientSecret);
 
     // Runs when client confirm for his/her order
     const handleSubmit = async (event) => {

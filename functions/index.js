@@ -17,8 +17,19 @@ app.use(express.json());
 
 // API routes
 app.get("/", (req, res) => res.status(200).send("Hello"));
+app.post("/payments/create", async (req, res) => {
+    const total = req.query.total;
+    console.log("Payment request recieved ", total);
+
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: total,
+        currency: "usd",
+    });
+
+    res.status(201).send({
+        clientSecret: paymentIntent.client_secret,
+    });
+});
 
 // Listen Command
 exports.api = functions.https.onRequest(app);
-
-// http://localhost:5001/br-bookaholic/us-central1/api
