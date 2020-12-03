@@ -19,7 +19,7 @@ function CashOnDeliveryMethod({ setCount }) {
                         <i class="fas fa-arrow-left"></i> Back
                     </button>
                     <button className="submit" onClick={() => setCount(2)}>
-                        Next Step
+                        Confirm Order
                     </button>
                 </div>
             </div>

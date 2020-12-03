@@ -64,7 +64,7 @@ function MasterCard({ setCount }) {
                     <i class="fas fa-arrow-left"></i> Back
                 </button>
                 <button className="submit" onClick={() => handleSubmit}>
-                    Next Step
+                    Confirm Order
                 </button>
             </div>
         </form>

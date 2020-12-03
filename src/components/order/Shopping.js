@@ -9,6 +9,7 @@ import "../../styles/css/shopping.css";
 // Components
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
+import Confirmation from "./Confirmation";
 
 function Shopping() {
     const [count, setCount] = useState(0);
@@ -39,7 +40,9 @@ function Shopping() {
                             <AddressForm count={count} setCount={setCount} />
                         ) : count === 1 ? (
                             <PaymentForm count={count} setCount={setCount} />
-                        ) : null}
+                        ) : (
+                            <Confirmation count={count} setCount={setCount} />
+                        )}
                     </div>
                 </div>
             </div>

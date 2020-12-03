@@ -117,12 +117,14 @@ button.submit {
     display: flex;
     justify-content: space-evenly;
 }
-.CashOnDeliveryMethod div {
+.CashOnDeliveryMethod .des {
     height: 40vh;
     width: 50%;
-}
-.CashOnDeliveryMethod .des {
     padding: 0 20px 0 0;
+}
+.CashOnDeliveryMethod .image {
+    height: 40vh;
+    width: 50%;
 }
 .CashOnDeliveryMethod .image img {
     height: 40vh;
@@ -158,6 +160,32 @@ button.submit {
     border: none;
     outline: none;
     font-size: 18px;
+}
+.confirmation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.confirmation img {
+    height: 50vh;
+}
+.confirmation div {
+    width: 100%;
+    text-align: center;
+    margin-top: -30px;
+}
+.confirmation div a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #444;
+    margin: 5px;
+    padding: 8px 16px;
+    transition: 0.3s;
+}
+.confirmation div a:hover {
+    color: var(--blue);
 }
 
 @media (max-width: 768px) {

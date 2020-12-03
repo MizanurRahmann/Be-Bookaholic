@@ -261,3 +261,237 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
 [debug] [2020-12-03T03:02:13.782Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
 [debug] [2020-12-03T03:02:13.783Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:25:16.985Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:25:16.985Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:25:16.985Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:25:16.985Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:25:16.985Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:25:16.985Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:25:16.988Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:25:16.989Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:25:16.989Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:25:16.990Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:25:17.093Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:25:17.096Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:25:17.099Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:25:17.989Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:25:17.989Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:39:24.995Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:39:24.995Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:39:24.995Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:39:24.995Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:39:24.995Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:39:24.996Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:39:24.998Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:39:24.998Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:39:24.998Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:39:24.999Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:39:25.396Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:39:25.667Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:39:25.680Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:39:26.400Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:39:26.401Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:43:16.337Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:43:16.337Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:43:16.338Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:43:16.338Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:43:16.338Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:43:16.339Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:43:16.340Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:43:16.341Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:43:16.341Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:43:16.341Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:43:16.367Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:43:16.371Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:43:16.373Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:43:16.970Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:43:16.973Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:48:25.419Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:48:25.419Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:48:25.419Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:48:25.419Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:48:25.420Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:48:25.420Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:48:25.422Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:48:25.423Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:48:25.424Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:48:25.424Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:48:25.425Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:48:25.429Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:48:25.432Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:48:26.141Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:48:26.141Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:49:06.638Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:49:06.638Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:49:06.638Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:49:06.638Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:49:06.639Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:49:06.639Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:49:06.641Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:49:06.643Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:49:06.643Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:49:06.643Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:49:06.645Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:49:06.650Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:49:06.651Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:49:07.025Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:49:07.026Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:49:24.213Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:49:24.213Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:49:24.213Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:49:24.214Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:49:24.214Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:49:24.214Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:49:24.216Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:49:24.217Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:49:24.217Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:49:24.217Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:49:24.218Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:49:24.226Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[debug] [2020-12-03T03:49:24.227Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:49:24.593Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:49:24.593Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:51:44.475Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:51:44.475Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:51:44.475Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=96630 --> api
+[debug] [2020-12-03T03:51:44.475Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:51:44.475Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:51:44.476Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:51:44.478Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:51:44.479Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:51:44.480Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:51:44.480Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:51:44.493Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:51:44.501Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  96630 {"user":"Payment request recieved  96630","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  96630"}}
+[debug] [2020-12-03T03:51:44.504Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:51:45.060Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:51:45.060Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:51:47.100Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:51:47.100Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:51:47.100Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=96630 --> api
+[debug] [2020-12-03T03:51:47.100Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:51:47.101Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:51:47.101Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:51:47.103Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:51:47.103Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:51:47.103Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:51:47.104Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:51:47.105Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:51:47.108Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  96630 {"user":"Payment request recieved  96630","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  96630"}}
+[debug] [2020-12-03T03:51:47.110Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:51:47.497Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:51:47.498Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:51:55.863Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:51:55.863Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:51:55.864Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=96630 --> api
+[debug] [2020-12-03T03:51:55.864Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:51:55.864Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:51:55.864Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:51:55.867Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:51:55.868Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:51:55.868Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:51:55.869Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:51:55.870Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:51:55.877Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[debug] [2020-12-03T03:51:55.878Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] >  Payment request recieved  96630 {"user":"Payment request recieved  96630","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  96630"}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:51:56.303Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:51:56.304Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:52:57.054Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:52:57.054Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:52:57.055Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=96630 --> api
+[debug] [2020-12-03T03:52:57.055Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:52:57.055Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:52:57.056Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:52:57.056Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:52:57.058Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:52:57.059Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:52:57.059Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:52:57.061Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:52:57.066Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  96630 {"user":"Payment request recieved  96630","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  96630"}}
+[debug] [2020-12-03T03:52:57.067Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:52:57.423Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:52:57.424Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:56:19.185Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:56:19.185Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:56:19.186Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:56:19.186Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:56:19.186Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:56:19.186Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:56:19.187Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:56:19.188Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:56:19.189Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:56:19.189Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:56:19.190Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:56:19.194Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:56:19.199Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:56:19.824Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:56:19.825Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:58:17.115Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:58:17.116Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:58:17.116Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:58:17.116Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:58:17.116Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:58:17.116Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:58:17.117Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:58:17.118Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:58:17.118Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:58:17.119Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:58:17.120Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:58:17.124Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:58:17.127Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:58:17.731Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:58:17.740Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-12-03T03:58:36.773Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-12-03T03:58:36.773Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-12-03T03:58:36.773Z] Accepted request POST /br-bookaholic/us-central1/api/payments/create?total=5000 --> api
+[debug] [2020-12-03T03:58:36.774Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-12-03T03:58:36.774Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: Assigning socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:58:36.774Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: BUSY"}}
+[debug] [2020-12-03T03:58:36.776Z] [runtime-status] [5359] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-12-03T03:58:36.776Z] [runtime-status] [5359] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-12-03T03:58:36.777Z] [runtime-status] [5359] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Running api in mode HTTPS"}}
+[debug] [2020-12-03T03:58:36.777Z] [runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Attempting to listen to socketPath: /tmp/fire_emu_5359.sock"}}
+[debug] [2020-12-03T03:58:36.778Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-12-03T03:58:36.782Z] [runtime-status] [5359] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server handling POST request"}}
+[info] >  Payment request recieved  5000 {"user":"Payment request recieved  5000","metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"\u001b[90m> \u001b[39m Payment request recieved  5000"}}
+[debug] [2020-12-03T03:58:36.783Z] [runtime-status] [5359] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [5359] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-12-03T03:58:37.206Z] [worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-15252ea5-32f3-43be-b71a-25a9c062a757]: IDLE"}}
+[debug] [2020-12-03T03:58:37.207Z] [work-queue] {"queueLength":0,"workRunningCount":0}
